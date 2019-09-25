@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="00aa9247-76a4-4234-ad5b-9334aff8accf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Programmering2/v39/läxa_flagga.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programmering2/v39/läxa_flagga.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/v39/läxa_flagga.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v39/läxa_flagga.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,7 +36,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ett">
+  <component name="RunManager" selected="Application.läxa_flagga">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="v36.hemläxa" />
       <module name="Programmering2" />
@@ -82,8 +83,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ett" />
         <item itemvalue="Application.läxa_flagga" />
+        <item itemvalue="Application.ett" />
       </list>
     </recent_temporary>
   </component>

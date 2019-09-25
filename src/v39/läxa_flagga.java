@@ -4,13 +4,13 @@ import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-
-import java.awt.*;
 
 public class läxa_flagga extends Application {
     public static void main(String[] args) { launch(args);}
-
+    @Override
     public void start(Stage primaryStage) throws Exception{
         String name = "";
 
@@ -18,9 +18,22 @@ public class läxa_flagga extends Application {
         Rectangle rec = new Rectangle();
         Rectangle back = new Rectangle();
 
-        StackPane swe = new Group(back);
-        swe.getChildren(rec);
-        swe.getChildren(squ);
+        back.setHeight(300.0f);
+        back.setWidth(600.0f);
+        back.setFill(Color.BLUE);
+
+        rec.setHeight(50.0f);
+        rec.setWidth(600.0f);
+        rec.setFill(Color.YELLOW);
+
+        squ.setTranslateX(-100.0f);
+        squ.setHeight(300.0f);
+        squ.setWidth(50.0f);
+        squ.setFill(Color.YELLOW);
+
+        StackPane swe = new StackPane(back);
+        swe.getChildren().add(rec);
+        swe.getChildren().add(squ);
 
         Scene scene = new Scene(swe, 600, 300);
         primaryStage.setTitle(name);
