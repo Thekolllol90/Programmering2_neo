@@ -3,6 +3,7 @@ package v39;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -12,8 +13,37 @@ public class läxa_flagga extends Application {
     public static void main(String[] args) { launch(args);}
     @Override
     public void start(Stage primaryStage) throws Exception{
-        String name = "";
+        Rectangle right = new Rectangle();
+        Rectangle mid = new Rectangle();
+        Rectangle left = new Rectangle();
 
+        right.setTranslateX(-200.0f);
+        right.setHeight(300.0f);
+        right.setWidth(200.0f);
+        right.setFill(Color.BLACK);
+
+        mid.setTranslateX(200.0f);
+        mid.setHeight(300.0f);
+        mid.setWidth(200.0f);
+        mid.setFill(Color.YELLOW);
+
+        left.setTranslateX(400.0f);
+        left.setHeight(300.0f);
+        left.setWidth(200.0f);
+        left.setFill(Color.RED);
+
+        BorderPane fra = new BorderPane(right);
+        fra.getChildren().add(mid);
+        fra.getChildren().add(left);
+
+        Scene scene = new Scene(fra, 600, 300);
+        primaryStage.setTitle("flaggor");
+
+        primaryStage.setScene(scene);
+
+        primaryStage.show();
+    }
+    private static void flagga_1(Stage primaryStage) throws Exception{
         Rectangle squ = new Rectangle();
         Rectangle rec = new Rectangle();
         Rectangle back = new Rectangle();
@@ -36,13 +66,41 @@ public class läxa_flagga extends Application {
         swe.getChildren().add(squ);
 
         Scene scene = new Scene(swe, 600, 300);
-        primaryStage.setTitle(name);
+        primaryStage.setTitle("flagga 1");
 
         primaryStage.setScene(scene);
 
         primaryStage.show();
     }
-    private static void flagga_1(){
+    private static void flagga_2(Stage primaryStage) throws Exception{
+        Rectangle right = new Rectangle();
+        Rectangle mid = new Rectangle();
+        Rectangle left = new Rectangle();
 
+        right.setTranslateX(-200.0f);
+        right.setHeight(300.0f);
+        right.setWidth(200.0f);
+        right.setFill(Color.BLACK);
+
+        mid.setTranslateX(200.0f);
+        mid.setHeight(300.0f);
+        mid.setWidth(200.0f);
+        mid.setFill(Color.YELLOW);
+
+        left.setTranslateX(400.0f);
+        left.setHeight(300.0f);
+        left.setWidth(200.0f);
+        left.setFill(Color.RED);
+
+        BorderPane fra = new BorderPane(right);
+        fra.getChildren().add(mid);
+        fra.getChildren().add(left);
+
+        Scene scene = new Scene(fra, 600, 300);
+        primaryStage.setTitle("flaggor");
+
+        primaryStage.setScene(scene);
+
+        primaryStage.show();
     }
 }
