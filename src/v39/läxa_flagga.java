@@ -13,44 +13,29 @@ public class läxa_flagga extends Application {
     public static void main(String[] args) { launch(args);}
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Rectangle front_left = new Rectangle();
-        Rectangle left = new Rectangle();
-        Rectangle front_mid = new Rectangle();
+        Rectangle top = new Rectangle();
         Rectangle mid = new Rectangle();
-        Rectangle back = new Rectangle();
+        Rectangle bot = new Rectangle();
 
-        back.setHeight(300.0f);
-        back.setWidth(600.0f);
-        back.setFill(Color.RED);
+        top.setHeight(100.0f);
+        top.setWidth(600.0f);
+        top.setFill(Color.RED);
 
-        front_mid.setHeight(40.0f);
-        front_mid.setWidth(600.0f);
-        front_mid.setFill(Color.BLUE);
-
-        mid.setHeight(50.0f);
+        mid.setHeight(100.0f);
         mid.setWidth(600.0f);
         mid.setFill(Color.WHITE);
 
+        bot.setHeight(100.0f);
+        bot.setWidth(600.0f);
+        bot.setFill(Color.BLUE);
 
-        front_left.setTranslateX(-100.0f);
-        front_left.setHeight(300.0f);
-        front_left.setWidth(40.0f);
-        front_left.setFill(Color.BLUE);
+        BorderPane fra = new BorderPane();
+        fra.setTop(top);
+        fra.setCenter(mid);
+        fra.setBottom(bot);
 
-        left.setTranslateX(-100.0f);
-        left.setHeight(300.0f);
-        left.setWidth(50.0f);
-        left.setFill(Color.WHITE);
-
-        StackPane swe = new StackPane(back);
-        swe.getChildren().add(left);
-        swe.getChildren().add(mid);
-        swe.getChildren().add(front_left);
-        swe.getChildren().add(front_mid);
-
-
-        Scene scene = new Scene(swe, 600, 300);
-        primaryStage.setTitle("flagga 1");
+        Scene scene = new Scene(fra, 600, 300);
+        primaryStage.setTitle("flaggor");
 
         primaryStage.setScene(scene);
 
@@ -79,7 +64,7 @@ public class läxa_flagga extends Application {
         swe.getChildren().add(squ);
 
         Scene scene = new Scene(swe, 600, 300);
-        primaryStage.setTitle("flagga 1");
+        primaryStage.setTitle("flaggor");
 
         primaryStage.setScene(scene);
 
@@ -154,10 +139,13 @@ public class läxa_flagga extends Application {
 
 
         Scene scene = new Scene(swe, 600, 300);
-        primaryStage.setTitle("flagga 1");
+        primaryStage.setTitle("flaggor");
 
         primaryStage.setScene(scene);
 
         primaryStage.show();
+    }
+    private static void flagga_4(Stage primaryStage) throws Exception{
+
     }
  }
