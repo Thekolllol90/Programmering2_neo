@@ -20,19 +20,6 @@ public class läxa_flagga extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         pick(primaryStage);
-        if(flag == 1){
-            flagga_1(primaryStage);
-        }else if(flag == 2){
-            flagga_2(primaryStage);
-        }else if (flag == 3){
-            flagga_3(primaryStage);
-        }else if(flag == 4){
-            flagga_4(primaryStage);
-        }else {
-            System.out.println("Im a stupid bitch");
-        }
-
-
     }
 
     private static void pick(Stage primaryStage) throws Exception{
@@ -47,6 +34,11 @@ public class läxa_flagga extends Application {
         swe.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
                 flag = 1;
+                try {
+                    flagga(primaryStage);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -58,6 +50,11 @@ public class läxa_flagga extends Application {
             @Override
             public void handle(ActionEvent event) {
                 flag = 2;
+                try {
+                    flagga(primaryStage);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -69,6 +66,11 @@ public class läxa_flagga extends Application {
             @Override
             public void handle(ActionEvent event) {
                 flag = 3;
+                try {
+                    flagga(primaryStage);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -80,6 +82,11 @@ public class läxa_flagga extends Application {
             @Override
             public void handle(ActionEvent event) {
                 flag = 4;
+                try {
+                    flagga(primaryStage);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -91,6 +98,20 @@ public class läxa_flagga extends Application {
         primaryStage.setTitle("chose");
         primaryStage.setScene(scene);
         primaryStage.show();
+    }
+
+    private static void flagga(Stage primaryStage) throws Exception{
+        if(flag == 1){
+            flagga_1(primaryStage);
+        }else if(flag == 2){
+            flagga_2(primaryStage);
+        }else if (flag == 3){
+            flagga_3(primaryStage);
+        }else if(flag == 4){
+            flagga_4(primaryStage);
+        }else {
+            System.out.println("Im a stupid bitch");
+        }
     }
 
     private static void flagga_1(Stage primaryStage) throws Exception{
