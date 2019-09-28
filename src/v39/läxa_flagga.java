@@ -14,19 +14,54 @@ import javafx.stage.Stage;
 import javafx.scene.text.Text;
 
 public class läxa_flagga extends Application {
+    public static int flag = 0;
     public static void main(String[] args) { launch(args);}
     @Override
     public void start(Stage primaryStage) throws Exception{
-        int flag = 0;
-        Button btn = new Button();
-        btn.setText("Sweden");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
+
+        Button swe = new Button();
+        Button tys = new Button();
+        Button nor = new Button();
+        Button fra = new Button();
+
+        swe.setText("Sweden");
+        swe.setMinHeight(30);
+        swe.setMinWidth(30);
+        swe.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
-                int flag = 1;
+                flag = 1;
             }
         });
-        System.out.println(flag);
 
+        tys.setText("Germany");
+        tys.setMinHeight(30);
+        tys.setMinWidth(30);
+        tys.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                flag = 2;
+            }
+        });
+
+        nor.setText("Norway");
+        nor.setMinHeight(30);
+        nor.setMinWidth(30);
+        nor.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                flag = 3;
+            }
+        });
+
+        fra.setText("France");
+        fra.setMinHeight(30);
+        fra.setMinWidth(30);
+        fra.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                flag = 4;
+            }
+        });
 
 
     }
@@ -70,7 +105,7 @@ public class läxa_flagga extends Application {
         swe.getChildren().add(squ);
 
         Scene scene = new Scene(swe, 600, 300);
-        primaryStage.setTitle("flaggor");
+        primaryStage.setTitle("Sweden");
 
         primaryStage.setScene(scene);
 
@@ -99,7 +134,7 @@ public class läxa_flagga extends Application {
         tys.setLeft(right);
 
         Scene scene = new Scene(tys, 600, 300);
-        primaryStage.setTitle("flaggor");
+        primaryStage.setTitle("Germany");
 
         primaryStage.setScene(scene);
 
@@ -143,7 +178,7 @@ public class läxa_flagga extends Application {
 
 
         Scene scene = new Scene(nor, 600, 300);
-        primaryStage.setTitle("flaggor");
+        primaryStage.setTitle("Norway");
 
         primaryStage.setScene(scene);
 
@@ -172,7 +207,7 @@ public class läxa_flagga extends Application {
         fra.setBottom(bot);
 
         Scene scene = new Scene(fra, 600, 300);
-        primaryStage.setTitle("flaggor");
+        primaryStage.setTitle("France");
 
         primaryStage.setScene(scene);
 
