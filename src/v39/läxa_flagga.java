@@ -7,6 +7,7 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -18,7 +19,23 @@ public class läxa_flagga extends Application {
     public static void main(String[] args) { launch(args);}
     @Override
     public void start(Stage primaryStage) throws Exception{
+        pick(primaryStage);
+        if(flag == 1){
+            flagga_1(primaryStage);
+        }else if(flag == 2){
+            flagga_2(primaryStage);
+        }else if (flag == 3){
+            flagga_3(primaryStage);
+        }else if(flag == 4){
+            flagga_4(primaryStage);
+        }else {
+            System.out.println("Im a stupid bitch");
+        }
 
+
+    }
+
+    private static void pick(Stage primaryStage) throws Exception{
         Button swe = new Button();
         Button tys = new Button();
         Button nor = new Button();
@@ -33,6 +50,7 @@ public class läxa_flagga extends Application {
             }
         });
 
+        tys.setTranslateX(100.0f);
         tys.setText("Germany");
         tys.setMinHeight(30);
         tys.setMinWidth(30);
@@ -43,6 +61,7 @@ public class läxa_flagga extends Application {
             }
         });
 
+        nor.setTranslateX(200.0f);
         nor.setText("Norway");
         nor.setMinHeight(30);
         nor.setMinWidth(30);
@@ -53,6 +72,7 @@ public class läxa_flagga extends Application {
             }
         });
 
+        fra.setTranslateX(300.0f);
         fra.setText("France");
         fra.setMinHeight(30);
         fra.setMinWidth(30);
@@ -63,25 +83,16 @@ public class läxa_flagga extends Application {
             }
         });
 
+        Group box = new Group();
 
-    }
-    private static int pick(int flag,  Stage primaryStage) throws Exception{
-        int res = 0;
-        Text text = new Text("Välj en flagga!");
-        text.setX(50);
-        text.setY(50);
+        box.getChildren().addAll(swe, tys, nor, fra);
 
-
-
-        Group group = new Group();
-        Scene scene = new Scene(group, 600, 300);
-
-        primaryStage.setTitle("flaggor");
+        Scene scene = new Scene(box, 600, 300);
+        primaryStage.setTitle("chose");
         primaryStage.setScene(scene);
         primaryStage.show();
-
-        return res;
     }
+
     private static void flagga_1(Stage primaryStage) throws Exception{
         Rectangle squ = new Rectangle();
         Rectangle rec = new Rectangle();
@@ -111,6 +122,7 @@ public class läxa_flagga extends Application {
 
         primaryStage.show();
     }
+
     private static void flagga_2(Stage primaryStage) throws Exception{
         Rectangle right = new Rectangle();
         Rectangle mid = new Rectangle();
@@ -140,6 +152,7 @@ public class läxa_flagga extends Application {
 
         primaryStage.show();
     }
+
     private static void flagga_3(Stage primaryStage) throws  Exception{
         Rectangle front_left = new Rectangle();
         Rectangle left = new Rectangle();
@@ -184,6 +197,7 @@ public class läxa_flagga extends Application {
 
         primaryStage.show();
     }
+
     private static void flagga_4(Stage primaryStage) throws Exception{
         Rectangle top = new Rectangle();
         Rectangle mid = new Rectangle();
