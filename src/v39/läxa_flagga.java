@@ -1,48 +1,47 @@
 package v39;
 
-import javafx.application.Application;
+import javafx.application.Application; //importerar all skit som behövs för javafx
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-import javafx.scene.text.Text;
+
 
 public class läxa_flagga extends Application {
-    public static int flag = 0;
+    public static int flag = 0; // sätter en global variabel, i know vi ska inte ha de men va ända sättet jag kom på
     public static void main(String[] args) { launch(args);}
     @Override
     public void start(Stage primaryStage) throws Exception{
-        pick(primaryStage);
+        pick(primaryStage); //kallar på methoden som låter en välja en flagga
     }
 
     private static void pick(Stage primaryStage) throws Exception{
-        Button swe = new Button();
+        Button swe = new Button(); // skapar nya knappar
         Button tys = new Button();
         Button nor = new Button();
         Button fra = new Button();
 
-        swe.setText("Sweden");
-        swe.setMinHeight(30);
+        swe.setText("Sweden"); // sätter en text på knappen
+        swe.setMinHeight(30); // sätter en storlek på knappen
         swe.setMinWidth(30);
-        swe.setOnAction(new EventHandler<ActionEvent>() {
+        swe.setOnAction(new EventHandler<ActionEvent>() { //bestämer vad som händer när man klickar på knappen
             public void handle(ActionEvent event) {
-                flag = 1;
+                flag = 1; // ändrar variabeln som bestämer vilken flagga som ska visas
                 try {
-                    flagga(primaryStage);
+                    flagga(primaryStage); // kallar på methoden som kollar vilken flagga som ska visas
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         });
 
-        tys.setTranslateX(100.0f);
+        tys.setTranslateX(100.0f); // flyttar knappen så den syns
         tys.setText("Germany");
         tys.setMinHeight(30);
         tys.setMinWidth(30);
@@ -92,16 +91,16 @@ public class läxa_flagga extends Application {
 
         Group box = new Group();
 
-        box.getChildren().addAll(swe, tys, nor, fra);
+        box.getChildren().addAll(swe, tys, nor, fra); // lägger till alla knappar i box
 
-        Scene scene = new Scene(box, 600, 300);
-        primaryStage.setTitle("chose");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        Scene scene = new Scene(box, 600, 300); // gör en sen med box i
+        primaryStage.setTitle("chose"); // ger fönstret ett namn
+        primaryStage.setScene(scene); //lägger in scene i fönstret
+        primaryStage.show(); // visar fönstret
     }
 
     private static void flagga(Stage primaryStage) throws Exception{
-        if(flag == 1){
+        if(flag == 1){  // kollar vilken flagga som ska vissas och kallar på methoden som visar flaggan
             flagga_1(primaryStage);
         }else if(flag == 2){
             flagga_2(primaryStage);
@@ -110,18 +109,18 @@ public class läxa_flagga extends Application {
         }else if(flag == 4){
             flagga_4(primaryStage);
         }else {
-            System.out.println("Im a stupid bitch");
+            System.out.println("Im a stupid bitch"); // för att veta om allt funkade eller inte
         }
     }
 
     private static void flagga_1(Stage primaryStage) throws Exception{
-        Rectangle squ = new Rectangle();
+        Rectangle squ = new Rectangle(); // skapar rectanglar
         Rectangle rec = new Rectangle();
         Rectangle back = new Rectangle();
 
-        back.setHeight(300.0f);
-        back.setWidth(600.0f);
-        back.setFill(Color.BLUE);
+        back.setHeight(300.0f); // sätter höjden på rectangeln
+        back.setWidth(600.0f); // sätter bredden på rectangeln
+        back.setFill(Color.BLUE); // sätter färgen på rectangeln
 
         rec.setHeight(50.0f);
         rec.setWidth(600.0f);
@@ -132,8 +131,8 @@ public class läxa_flagga extends Application {
         squ.setWidth(50.0f);
         squ.setFill(Color.YELLOW);
 
-        StackPane swe = new StackPane(back);
-        swe.getChildren().add(rec);
+        StackPane swe = new StackPane(back); // skapar en stackpane och lägger in backgrounden
+        swe.getChildren().add(rec); // lägger till en rectangel i stackpane
         swe.getChildren().add(squ);
 
         Scene scene = new Scene(swe, 600, 300);
@@ -161,10 +160,10 @@ public class läxa_flagga extends Application {
         left.setWidth(200.0f);
         left.setFill(Color.RED);
 
-        BorderPane tys = new BorderPane();
-        tys.setRight(left);
-        tys.setCenter(mid);
-        tys.setLeft(right);
+        BorderPane tys = new BorderPane(); //skapar en borderpane
+        tys.setRight(left); // lägger till left på höger sida av bordepane, skrev fel namn orka inte byta
+        tys.setCenter(mid); // lägger mid i mitten
+        tys.setLeft(right); // lägger right till vänster
 
         Scene scene = new Scene(tys, 600, 300);
         primaryStage.setTitle("Germany");
