@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00aa9247-76a4-4234-ad5b-9334aff8accf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/V40/ovning_lektion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Programmering2/V40/ovning_lektion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programmering2/V40/ovning_lektion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/V40/ovning_lektion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/V40/ovning_lektion.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +24,9 @@
   </component>
   <component name="ProjectId" id="1QjaWM2meZTDdN7HxyfhICx2Q7D" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
