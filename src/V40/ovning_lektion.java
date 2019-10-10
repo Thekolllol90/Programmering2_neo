@@ -1,14 +1,15 @@
 package V40;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Control;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.RowConstraints;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.shape.Rectangle;
@@ -19,8 +20,7 @@ public class ovning_lektion extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        TextField input = new TextField();
-        TextField output = new TextField();
+        Label input = new Label();
 
         String[][] buttons = {
             { "1", "2", "3", "+" },
@@ -31,33 +31,31 @@ public class ovning_lektion extends Application {
 
         GridPane grid = new GridPane();
 
+        final ColumnConstraints col = new ColumnConstraints(100, Control.USE_COMPUTED_SIZE, Control.USE_COMPUTED_SIZE);
+        col.setHgrow(Priority.ALWAYS);
+        grid.getColumnConstraints().addAll(col, col, col, col);
+
+
+        grid.add(input, 0, 0, 4, 1);
+
         for(int y = 0; y < buttons.length; y++) {
             for(int x = 0; x < buttons[y].length; x++) {
                 String name = buttons[y][x];
                 Button button = new Button(name);
+                button.setMinWidth(100);
+                button.setOnAction(event -> {
+                    if(name.equals("C"))
+                        return;
+                    String text = input.getText();
+                    StringBuilder builder = new StringBuilder();
+                    builder.append(text);
+                    builder.append(name);
+                    input.setText(builder.toString());
+                });
 
-                grid.add(button, x, y);
+                grid.add(button, x, y + 1);
             }
         }
-
-        /*Button btn0 = new Button();
-        Button btn1 = new Button();
-        Button btn2 = new Button();
-        Button btn3 = new Button();
-        Button btn4 = new Button();
-        Button btn5 = new Button();
-        Button btn6 = new Button();
-        Button btn7 = new Button();
-        Button btn8 = new Button();
-        Button btn9 = new Button();
-        Button btnPlus = new Button();
-        Button btnMinus = new Button();
-        Button btnMulti = new Button();
-        Button btnDiv = new Button();
-        Button btnKom = new Button();
-        Button btnCalc = new Button();*/
-
-        //btn0.getWidth();
 
         Rectangle rec = new Rectangle();
 

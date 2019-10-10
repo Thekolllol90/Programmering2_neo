@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00aa9247-76a4-4234-ad5b-9334aff8accf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Programmering2/V40/ovning_lektion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programmering2/V40/ovning_lektion.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/V40/ovning_lektion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/V40/ovning_lektion.java" afterDir="false" />
     </list>
