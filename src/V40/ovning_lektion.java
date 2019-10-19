@@ -42,45 +42,74 @@ public class ovning_lektion extends Application {
         Button btnClear = new Button();
         Button btnEq = new Button();
 
+        int distans = 0;
+
         btn0.setMinWidth(50.0f);
         btn0.setMinHeight(50.0f);
         btn0.setText("0");
 
+        distans += 60;
+
         btn1.setMinWidth(50.0f);
         btn1.setMinHeight(50.0f);
         btn1.setText("1");
+        btn1.setTranslateX(distans);
+
+        distans += 60;
 
         btn2.setMinWidth(50.0f);
         btn2.setMinHeight(50.0f);
         btn2.setText("2");
+        btn2.setTranslateX(distans);
+
+        distans += 60;
 
         btn3.setMinWidth(50.0f);
         btn3.setMinHeight(50.0f);
         btn3.setText("3");
+        btn3.setTranslateX(distans);
+
+        distans += 60;
 
         btn4.setMinWidth(50.0f);
         btn4.setMinHeight(50.0f);
         btn4.setText("4");
+        btn4.setTranslateX(distans);
+
+        distans += 60;
 
         btn5.setMinWidth(50.0f);
         btn5.setMinHeight(50.0f);
         btn5.setText("5");
+        btn5.setTranslateX(distans);
+
+        distans += 60;
 
         btn6.setMinWidth(50.0f);
         btn6.setMinHeight(50.0f);
         btn6.setText("6");
+        btn6.setTranslateX(distans);
+
+        distans += 60;
 
         btn7.setMinWidth(50.0f);
         btn7.setMinHeight(50.0f);
         btn7.setText("7");
+        btn7.setTranslateX(distans);
+
+        distans += 60;
 
         btn8.setMinWidth(50.0f);
         btn8.setMinHeight(50.0f);
         btn8.setText("8");
+        btn8.setTranslateX(distans);
+
+        distans += 60;
 
         btn9.setMinWidth(50.0f);
         btn9.setMinHeight(50.0f);
         btn9.setText("9");
+        btn9.setTranslateX(distans);
 
         btnPlus.setMinWidth(50.0f);
         btnPlus.setMinHeight(50.0f);
@@ -110,11 +139,10 @@ public class ovning_lektion extends Application {
         btnMod.setMinHeight(50.0f);
         btnMod.setText("%");
 
+        Group numbers = new Group(btn0);
+        numbers.getChildren().addAll(btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9);
 
-
-        Group forNow = new Group(btn0);
-
-        Scene scene = new Scene(forNow, 600, 600);
+        Scene scene = new Scene(numbers, 600, 600);
         primaryStage.setTitle("Calc");
         primaryStage.setScene(scene);
         primaryStage.show();
