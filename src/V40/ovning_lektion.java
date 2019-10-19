@@ -26,6 +26,7 @@ public class ovning_lektion extends Application {
         layout(primaryStage);
     }
     public static void layout(Stage primaryStage) throws Exception{
+        TextField calc = new TextField();
         Button btn0 = new Button();
         Button btn1 = new Button();
         Button btn2 = new Button();
@@ -44,7 +45,7 @@ public class ovning_lektion extends Application {
         Button btnClear = new Button();
         Button btnEq = new Button();
 
-        int distans = 0;
+        int distans = 10;
 
         Button[] buttonsNumber = {btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnPlus, btnMinus, btnTimes, btnDiv, btnEq, btnClear, btnMod};
         String[] number = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+", "-", "*", "/", "=", "C", "%"};
@@ -57,10 +58,20 @@ public class ovning_lektion extends Application {
             distans += 60;
         }
 
+        calc.setDisable(true);
+
         Group numbers = new Group(btn0);
         numbers.getChildren().addAll(btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9);
 
-        Scene scene = new Scene(numbers, 600, 600);
+        Group ops = new Group(btnPlus);
+        ops.getChildren().addAll(btnMinus, btnTimes, btnDiv, btnMod, btnClear, btnEq);
+
+        BorderPane display = new BorderPane();
+        display.setTop(calc);
+        display.setCenter(numbers);
+        display.setBottom(ops);
+
+        Scene scene = new Scene(display, 610, 300);
         primaryStage.setTitle("Calc");
         primaryStage.setScene(scene);
         primaryStage.show();
