@@ -47,6 +47,8 @@ public class ovning_lektion extends Application {
 
         int distans = 10;
 
+        String internalText[] = {};
+
         Button[] buttonsNumber = {btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnPlus, btnMinus, btnTimes, btnDiv, btnEq, btnClear, btnMod};
         String[] number = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+", "-", "*", "/", "=", "C", "%"};
 
@@ -59,6 +61,15 @@ public class ovning_lektion extends Application {
         }
 
         calc.setDisable(true);
+
+        for(int i = 0; i < 10; i++){
+            buttonsNumber[i].setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+
+                }
+            });
+        }
 
         Group numbers = new Group(btn0);
         numbers.getChildren().addAll(btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9);
