@@ -14,6 +14,8 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.shape.Rectangle;
 
+import java.lang.reflect.Array;
+
 //gör så när man klickar på exempel + så loppar den igenom så de inte blir ++ i rutan
 public class ovning_lektion extends Application {
     public static void main(String[] args) { launch(args); }
@@ -43,101 +45,18 @@ public class ovning_lektion extends Application {
         Button btnEq = new Button();
 
         int distans = 0;
+        String number = "";
 
-        btn0.setMinWidth(50.0f);
-        btn0.setMinHeight(50.0f);
-        btn0.setText("0");
+        Button[] buttonsNumber = {btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnPlus, btnMinus, btnTimes, btnDiv, btnEq, btnClear, btnMod};
 
-        distans += 60;
-
-        btn1.setMinWidth(50.0f);
-        btn1.setMinHeight(50.0f);
-        btn1.setText("1");
-        btn1.setTranslateX(distans);
-
-        distans += 60;
-
-        btn2.setMinWidth(50.0f);
-        btn2.setMinHeight(50.0f);
-        btn2.setText("2");
-        btn2.setTranslateX(distans);
-
-        distans += 60;
-
-        btn3.setMinWidth(50.0f);
-        btn3.setMinHeight(50.0f);
-        btn3.setText("3");
-        btn3.setTranslateX(distans);
-
-        distans += 60;
-
-        btn4.setMinWidth(50.0f);
-        btn4.setMinHeight(50.0f);
-        btn4.setText("4");
-        btn4.setTranslateX(distans);
-
-        distans += 60;
-
-        btn5.setMinWidth(50.0f);
-        btn5.setMinHeight(50.0f);
-        btn5.setText("5");
-        btn5.setTranslateX(distans);
-
-        distans += 60;
-
-        btn6.setMinWidth(50.0f);
-        btn6.setMinHeight(50.0f);
-        btn6.setText("6");
-        btn6.setTranslateX(distans);
-
-        distans += 60;
-
-        btn7.setMinWidth(50.0f);
-        btn7.setMinHeight(50.0f);
-        btn7.setText("7");
-        btn7.setTranslateX(distans);
-
-        distans += 60;
-
-        btn8.setMinWidth(50.0f);
-        btn8.setMinHeight(50.0f);
-        btn8.setText("8");
-        btn8.setTranslateX(distans);
-
-        distans += 60;
-
-        btn9.setMinWidth(50.0f);
-        btn9.setMinHeight(50.0f);
-        btn9.setText("9");
-        btn9.setTranslateX(distans);
-
-        btnPlus.setMinWidth(50.0f);
-        btnPlus.setMinHeight(50.0f);
-        btnPlus.setText("+");
-
-        btnMinus.setMinWidth(50.0f);
-        btnMinus.setMinHeight(50.0f);
-        btnMinus.setText("-");
-
-        btnTimes.setMinWidth(50.0f);
-        btnTimes.setMinHeight(50.0f);
-        btnTimes.setText("*");
-
-        btnDiv.setMinWidth(50.0f);
-        btnDiv.setMinHeight(50.0f);
-        btnDiv.setText("/");
-
-        btnEq.setMinWidth(50.0f);
-        btnEq.setMinHeight(50.0f);
-        btnEq.setText("=");
-
-        btnClear.setMinWidth(50.0f);
-        btnClear.setMinHeight(50.0f);
-        btnClear.setText("C");
-
-        btnMod.setMinWidth(50.0f);
-        btnMod.setMinHeight(50.0f);
-        btnMod.setText("%");
+        for(int i = 0; i <= buttonsNumber.length - 1; i++){
+            number = String.valueOf(i);
+            buttonsNumber[i].setMinWidth(50.0f);
+            buttonsNumber[i].setMinHeight(50.0f);
+            buttonsNumber[i].setText(number);
+            buttonsNumber[i].setTranslateX(distans);
+            distans += 60;
+        }
 
         Group numbers = new Group(btn0);
         numbers.getChildren().addAll(btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9);
