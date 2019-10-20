@@ -94,14 +94,21 @@ public class ovning_lektion extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+
     public static void paint(Button[] buttonsNumber, Stage primaryStage, Group numbers, Group ops, ArrayList<Character> internalText) {
         TextField calc = new TextField();
         calc.setDisable(true);
 
-        ArrayList<Character> internalText2 = internalText;
         String calcText = "";
 
-        calcText = internalText.toString();
+        if(internalText.get(internalText.size() - 1) == internalText.get(internalText.size() - 2) && ('+' || '-' || '/' || '*' || '%')){
+
+        }
+
+        for(int i = 0; i < internalText.size(); i++){
+            calcText = calcText + internalText.get(i);
+        }
+
         calc.setText(calcText);
 
         BorderPane display = new BorderPane();
@@ -115,4 +122,10 @@ public class ovning_lektion extends Application {
         primaryStage.show();
     }
 
+    public static ArrayList checkLast(ArrayList<Character> internalText){
+        ArrayList<Character> list = internalText;
+
+        
+        return list;
+    }
 }
