@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import javafx.scene.shape.Rectangle;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 //gör så när man klickar på exempel + så loppar den igenom så de inte blir ++ i rutan
 public class ovning_lektion extends Application {
@@ -46,8 +47,9 @@ public class ovning_lektion extends Application {
         Button btnEq = new Button();
 
         int distans = 10;
+        int calcValue = 0;
 
-        String internalText[] = {};
+        ArrayList<Character> internalText = new ArrayList<Character>();
 
         Button[] buttonsNumber = {btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnPlus, btnMinus, btnTimes, btnDiv, btnEq, btnClear, btnMod};
         String[] number = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+", "-", "*", "/", "=", "C", "%"};
@@ -62,13 +64,15 @@ public class ovning_lektion extends Application {
 
         calc.setDisable(true);
 
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < buttonsNumber.length; i++){
+            int finalCalcValue = calcValue;
             buttonsNumber[i].setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
-
+                    internalText.add((char) finalCalcValue);
                 }
             });
+            calcValue++;
         }
 
         Group numbers = new Group(btn0);
