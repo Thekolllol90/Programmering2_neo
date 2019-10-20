@@ -52,13 +52,11 @@ public class ovning_lektion extends Application {
 
     public static void layout(Stage primaryStage) throws Exception{
         Button[] buttonsNumber = buttons();
-        TextField calc = new TextField();
 
         int distans = 10;
         int calcValue = 0;
 
         ArrayList<Character> internalText = new ArrayList<Character>();
-
         char[] number = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '=', 'C', '%'};
 
         for(int i = 0; i < buttonsNumber.length; i++){
@@ -69,7 +67,11 @@ public class ovning_lektion extends Application {
             distans += 60;
         }
 
-        calc.setDisable(true);
+        Group numbers = new Group(buttonsNumber[0]);
+        numbers.getChildren().addAll(buttonsNumber[1], buttonsNumber[2], buttonsNumber[3], buttonsNumber[4], buttonsNumber[5], buttonsNumber[6], buttonsNumber[7], buttonsNumber[8], buttonsNumber[9]);
+
+        Group ops = new Group(buttonsNumber[10]);
+        ops.getChildren().addAll(buttonsNumber[11], buttonsNumber[12], buttonsNumber[13], buttonsNumber[16], buttonsNumber[15], buttonsNumber[14]);
 
         for(int i = 0; i < buttonsNumber.length; i++){
             int finalCalcValue = calcValue;
@@ -77,19 +79,13 @@ public class ovning_lektion extends Application {
                 @Override
                 public void handle(ActionEvent event) {
                     internalText.add((char) number[finalCalcValue]);
-                    paint(buttonsNumber, primaryStage);
+                    paint(buttonsNumber, primaryStage, numbers, ops, internalText);
                 }
             });
             calcValue++;
         }
-        Group numbers = new Group(buttonsNumber[0]);
-        numbers.getChildren().addAll(buttonsNumber[1], buttonsNumber[2], buttonsNumber[3], buttonsNumber[4], buttonsNumber[5], buttonsNumber[6], buttonsNumber[7], buttonsNumber[8], buttonsNumber[9]);
-
-        Group ops = new Group(buttonsNumber[10]);
-        ops.getChildren().addAll(buttonsNumber[11], buttonsNumber[12], buttonsNumber[13], buttonsNumber[16], buttonsNumber[15], buttonsNumber[14]);
 
         BorderPane display = new BorderPane();
-        display.setTop(calc);
         display.setCenter(numbers);
         display.setBottom(ops);
 
@@ -98,21 +94,15 @@ public class ovning_lektion extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
-    public static void paint(Button[] buttonsNumber, Stage primaryStage) {
+    public static void paint(Button[] buttonsNumber, Stage primaryStage, Group numbers, Group ops, ArrayList<Character> internalText) {
         TextField calc = new TextField();
         calc.setDisable(true);
 
-        ArrayList<Character> internalText = new ArrayList<Character>();
+        ArrayList<Character> internalText2 = internalText;
         String calcText = "";
 
         calcText = internalText.toString();
         calc.setText(calcText);
-
-        Group numbers = new Group(buttonsNumber[0]);
-        numbers.getChildren().addAll(buttonsNumber[1], buttonsNumber[2], buttonsNumber[3], buttonsNumber[4], buttonsNumber[5], buttonsNumber[6], buttonsNumber[7], buttonsNumber[8], buttonsNumber[9]);
-
-        Group ops = new Group(buttonsNumber[10]);
-        ops.getChildren().addAll(buttonsNumber[11], buttonsNumber[12], buttonsNumber[13], buttonsNumber[16], buttonsNumber[15], buttonsNumber[14]);
 
         BorderPane display = new BorderPane();
         display.setTop(calc);
