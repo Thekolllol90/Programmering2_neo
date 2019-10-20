@@ -23,11 +23,10 @@ public class ovning_lektion extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-
-        layout(primaryStage);
+        Button[] buttonsNumber = buttons();
+        layout(primaryStage, buttonsNumber);
     }
-    public static void layout(Stage primaryStage) throws Exception{
-        TextField calc = new TextField();
+    public static Button[] buttons(){
         Button btn0 = new Button();
         Button btn1 = new Button();
         Button btn2 = new Button();
@@ -46,12 +45,21 @@ public class ovning_lektion extends Application {
         Button btnClear = new Button();
         Button btnEq = new Button();
 
+        Button[] buttonsNumber = {btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnPlus, btnMinus, btnTimes, btnDiv, btnEq, btnClear, btnMod};
+
+        return buttonsNumber;
+    }
+
+    public static void layout(Stage primaryStage, Button[] buttonsNumber) throws Exception{
+        TextField calc = new TextField();
+
         int distans = 10;
         int calcValue = 0;
 
+        String calcText = "";
+
         ArrayList<Character> internalText = new ArrayList<Character>();
 
-        Button[] buttonsNumber = {btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnPlus, btnMinus, btnTimes, btnDiv, btnEq, btnClear, btnMod};
         String[] number = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+", "-", "*", "/", "=", "C", "%"};
 
         for(int i = 0; i < buttonsNumber.length; i++){
@@ -75,11 +83,14 @@ public class ovning_lektion extends Application {
             calcValue++;
         }
 
-        Group numbers = new Group(btn0);
-        numbers.getChildren().addAll(btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9);
+        calcText = internalText.toString();
+        calc.setText(calcText);
 
-        Group ops = new Group(btnPlus);
-        ops.getChildren().addAll(btnMinus, btnTimes, btnDiv, btnMod, btnClear, btnEq);
+        Group numbers = new Group(buttonsNumber[0]);
+        numbers.getChildren().addAll(buttonsNumber[1], buttonsNumber[2], buttonsNumber[3], buttonsNumber[4], buttonsNumber[5], buttonsNumber[6], buttonsNumber[7], buttonsNumber[8], buttonsNumber[9]);
+
+        Group ops = new Group(buttonsNumber[10]);
+        ops.getChildren().addAll(buttonsNumber[11], buttonsNumber[12], buttonsNumber[13], buttonsNumber[16], buttonsNumber[15], buttonsNumber[14]);
 
         BorderPane display = new BorderPane();
         display.setTop(calc);
