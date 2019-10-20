@@ -14,6 +14,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.shape.Rectangle;
 
+import javax.swing.*;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
@@ -125,7 +126,11 @@ public class ovning_lektion extends Application {
     public static ArrayList checkLast(ArrayList<Character> internalText){
         ArrayList<Character> list = internalText;
 
-        
+        char a = '+';
+
+        switch (internalText.get(internalText.size() - 1)) {
+            case internalText.get(internalText.size() - 2 && a)
+        }
         return list;
     }
 }
