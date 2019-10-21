@@ -91,7 +91,7 @@ public class ovning_lektion extends Application {
                         paint(buttonsNumber, primaryStage, numbers, ops, internalText);
                         System.out.println(result);
                     } else if(c == 'C'){
-
+                        pressC(internalText);
                     } else {
                         paint(buttonsNumber, primaryStage, numbers, ops, internalText);
                     }
@@ -113,8 +113,6 @@ public class ovning_lektion extends Application {
     public static void paint(Button[] buttonsNumber, Stage primaryStage, Group numbers, Group ops, ArrayList<Character> internalText) {
         TextField calc = new TextField();
         calc.setDisable(true);
-
-        internalText = checkLast(internalText);
 
         String calcText = "";
 
@@ -205,18 +203,26 @@ public class ovning_lektion extends Application {
 
     public static ArrayList checkLast(ArrayList<Character> internalText){
         ArrayList<Character> list = internalText;
-            if(internalText.size() - 1 == internalText.size() - 2){
-                switch (internalText.size() - 1){
+            if(list.size() - 1 == list.size() - 2){
+                switch (list.size() - 1){
                     case '+':
                     case '-':
                     case '*':
                     case '%':
                     case '/':
-                        internalText.remove(internalText.size() - 1);
+                        list.remove(list.size() - 1);
                         break;
 
                 }
             }
+        return list;
+    }
+
+    public static ArrayList pressC(ArrayList<Character> internalText){
+        ArrayList<Character> list = internalText;
+        for(int i = 0; i < list.size(); i++){
+            list.set(i, ' ');
+        }
         return list;
     }
 }
