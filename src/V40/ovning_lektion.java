@@ -17,6 +17,9 @@ import javafx.scene.shape.Rectangle;
 import javax.swing.*;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+
+// 4  +  2 * 2
 
 //gör så när man klickar på exempel + så loppar den igenom så de inte blir ++ i rutan
 public class ovning_lektion extends Application {
@@ -79,8 +82,19 @@ public class ovning_lektion extends Application {
             buttonsNumber[i].setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
-                    internalText.add((char) number[finalCalcValue]);
-                    paint(buttonsNumber, primaryStage, numbers, ops, internalText);
+                    char c =  number[finalCalcValue];
+                    internalText.add(c);
+                    checkLast(internalText);
+                    if(c == '=') {
+                        String calculation = arrayListToString(internalText);
+                        int result = calc(calculation);
+                        paint(buttonsNumber, primaryStage, numbers, ops, internalText);
+                        System.out.println(result);
+                    } else if(c == 'C'){
+
+                    } else {
+                        paint(buttonsNumber, primaryStage, numbers, ops, internalText);
+                    }
                 }
             });
             calcValue++;
@@ -100,15 +114,15 @@ public class ovning_lektion extends Application {
         TextField calc = new TextField();
         calc.setDisable(true);
 
+        internalText = checkLast(internalText);
+
         String calcText = "";
 
-        if(internalText.get(internalText.size() - 1) == internalText.get(internalText.size() - 2) && ('+' || '-' || '/' || '*' || '%')){
+        /*if(internalText.get(internalText.size() - 1) == internalText.get(internalText.size() - 2) && ('+' || '-' || '/' || '*' || '%')){
 
-        }
+        }*/
 
-        for(int i = 0; i < internalText.size(); i++){
-            calcText = calcText + internalText.get(i);
-        }
+        calcText = arrayListToString(internalText);
 
         calc.setText(calcText);
 
@@ -123,14 +137,86 @@ public class ovning_lektion extends Application {
         primaryStage.show();
     }
 
+    public static String arrayListToString(ArrayList<Character> internalText){
+        String res = "";
+        for(int i = 0; i < internalText.size(); i++){
+            res = res + internalText.get(i);
+        }
+        return res;
+    }
+
+    public static int[] getInt(String text, int start) {
+        int current = start;
+        while(current < text.length() && Character.isWhitespace(text.charAt(current))) {
+            current++;
+        }
+
+        //  123
+        start = current;
+
+        while(current < text.length() && Character.isDigit(text.charAt(current))) {
+            current++;
+        }
+
+        int value = Integer.parseInt(text.substring(start, current));
+
+        return new int[] { value, current };
+    }
+
+    public static int calc(String text) {
+        // 123+ 2
+        int current = 0;
+        int result = 0;
+
+        while(current < text.length()) {
+            while(current < text.length() && Character.isWhitespace(text.charAt(current))) {
+                current++;
+            }
+
+            if(Character.isDigit(text.charAt(current))) {
+                int[] values = getInt(text, current);
+                result = values[0];
+                current = values[1];
+            } else {
+                switch(text.charAt(current)) {
+                    case '+': {
+                        current++;
+                        int[] values = getInt(text, current);
+                        int right = values[0];
+                        current = values[1];
+
+                        result += right;
+                    } break;
+
+                    case '*': {
+                        current++;
+                        int[] values = getInt(text, current);
+                        int right = values[0];
+                        current = values[1];
+
+                        result *= right;
+                    } break;
+                }
+            }
+        }
+
+        return result;
+    }
+
     public static ArrayList checkLast(ArrayList<Character> internalText){
         ArrayList<Character> list = internalText;
+            if(internalText.size() - 1 == internalText.size() - 2){
+                switch (internalText.size() - 1){
+                    case '+':
+                    case '-':
+                    case '*':
+                    case '%':
+                    case '/':
+                        internalText.remove(internalText.size() - 1);
+                        break;
 
-        char a = '+';
-
-        switch (internalText.get(internalText.size() - 1)) {
-            case internalText.get(internalText.size() - 2 && a)
-        }
+                }
+            }
         return list;
     }
 }

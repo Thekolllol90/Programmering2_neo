@@ -131,4 +131,12 @@
       </map>
     </option>
   </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="text.charAt(current)" language="JAVA" />
+        <watch expression="text.length()" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
 </project>
