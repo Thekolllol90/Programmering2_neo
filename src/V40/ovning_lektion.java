@@ -201,10 +201,10 @@ public class ovning_lektion extends Application {
         return result;
     }
 
-    public static ArrayList checkLast(ArrayList<Character> internalText){
+    public static ArrayList<Character> checkLast(ArrayList<Character> internalText){
         ArrayList<Character> list = internalText;
-            if(list.size() - 1 == list.size() - 2){
-                switch (list.size() - 1){
+            if(list.size() >= 2 && list.get(list.size() - 1) == list.get(list.size() - 2)){
+                switch (list.get(list.size() - 1)){
                     case '+':
                     case '-':
                     case '*':
@@ -218,10 +218,10 @@ public class ovning_lektion extends Application {
         return list;
     }
 
-    public static ArrayList pressC(ArrayList<Character> internalText){
+    public static ArrayList<Character> pressC(ArrayList<Character> internalText){
         ArrayList<Character> list = internalText;
         for(int i = 0; i < list.size(); i++){
-            list.set(i, ' ');
+            list.set(i, null);
         }
         return list;
     }
