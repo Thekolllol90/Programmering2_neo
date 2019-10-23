@@ -89,7 +89,6 @@ public class ovning_lektion extends Application {
                         String calculation = arrayListToString(internalText);
                         int result = calc(calculation);
                         paint(buttonsNumber, primaryStage, numbers, ops, internalText);
-                        System.out.println(result);
                     } else if(c == 'C'){
                         pressC(internalText);
                         paint(buttonsNumber, primaryStage, numbers, ops, internalText);
@@ -202,20 +201,31 @@ public class ovning_lektion extends Application {
         return result;
     }
 
+    public static boolean isOperator(char c) {
+        switch (c){
+            case '+':
+            case '-':
+            case '*':
+            case '%':
+            case '/':
+                return true;
+            default:
+                return false;
+        }
+    }
+
     public static ArrayList<Character> checkLast(ArrayList<Character> internalText){
         ArrayList<Character> list = internalText;
-            if(list.size() >= 2 && list.get(list.size() - 1) == list.get(list.size() - 2)){
-                switch (list.get(list.size() - 1)){
-                    case '+':
-                    case '-':
-                    case '*':
-                    case '%':
-                    case '/':
-                        list.remove(list.size() - 1);
-                        break;
-
-                }
+        if(list.size() >= 2) {
+            char first = list.get(list.size() - 1);
+            char last = list.get(list.size() - 2);
+            if(isOperator(first) && isOperator(last)) {
+                list.remove(list.size() - 1);
             }
+        }
+            /*if(list.size() >= 2 &&  == list.get(list.size() - 2)){
+
+            }*/
         return list;
     }
 
