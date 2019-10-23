@@ -83,16 +83,18 @@ public class ovning_lektion extends Application {
                 @Override
                 public void handle(ActionEvent event) {
                     char c =  number[finalCalcValue];
-                    internalText.add(c);
-                    checkLast(internalText);
+
                     if(c == '=') {
                         String calculation = arrayListToString(internalText);
                         int result = calc(calculation);
+                        calcOut(result, internalText);
                         paint(buttonsNumber, primaryStage, numbers, ops, internalText);
                     } else if(c == 'C'){
                         pressC(internalText);
                         paint(buttonsNumber, primaryStage, numbers, ops, internalText);
                     } else {
+                        internalText.add(c);
+                        checkLast(internalText);
                         paint(buttonsNumber, primaryStage, numbers, ops, internalText);
                     }
                 }
@@ -233,5 +235,18 @@ public class ovning_lektion extends Application {
         ArrayList<Character> list = internalText;
         list.clear();
         return list;
+    }
+
+    public static void calcOut(int result, ArrayList<Character> internalText){
+        ArrayList<Character> list = internalText;
+        list.clear();
+        
+        int x = result;
+        String toArray = "";
+        toArray = Integer.toString(x);
+
+        for(int i = 0; i < toArray.length(); i++){
+            list.add(toArray.charAt(i));
+        }
     }
 }
