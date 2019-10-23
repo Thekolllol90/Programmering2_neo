@@ -118,10 +118,6 @@ public class ovning_lektion extends Application {
 
         String calcText = "";
 
-        /*if(internalText.get(internalText.size() - 1) == internalText.get(internalText.size() - 2) && ('+' || '-' || '/' || '*' || '%')){
-
-        }*/
-
         calcText = arrayListToString(internalText);
 
         calc.setText(calcText);
@@ -196,6 +192,33 @@ public class ovning_lektion extends Application {
 
                         result *= right;
                     } break;
+
+                    case '-': {
+                        current++;
+                        int[] values = getInt(text, current);
+                        int right = values[0];
+                        current = values[1];
+
+                        result -= right;
+                    } break;
+
+                    case '/': {
+                        current++;
+                        int[] values = getInt(text, current);
+                        int right = values[0];
+                        current = values[1];
+
+                        result /= right;
+                    } break;
+
+                    case '%': {
+                        current++;
+                        int[] values = getInt(text, current);
+                        int right = values[0];
+                        current = values[1];
+
+                        result %= right;
+                    } break;
                 }
             }
         }
@@ -240,7 +263,7 @@ public class ovning_lektion extends Application {
     public static void calcOut(int result, ArrayList<Character> internalText){
         ArrayList<Character> list = internalText;
         list.clear();
-        
+
         int x = result;
         String toArray = "";
         toArray = Integer.toString(x);
