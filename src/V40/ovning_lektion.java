@@ -92,6 +92,7 @@ public class ovning_lektion extends Application {
                         System.out.println(result);
                     } else if(c == 'C'){
                         pressC(internalText);
+                        paint(buttonsNumber, primaryStage, numbers, ops, internalText);
                     } else {
                         paint(buttonsNumber, primaryStage, numbers, ops, internalText);
                     }
@@ -220,9 +221,7 @@ public class ovning_lektion extends Application {
 
     public static ArrayList<Character> pressC(ArrayList<Character> internalText){
         ArrayList<Character> list = internalText;
-        for(int i = 0; i < list.size(); i++){
-            list.set(i, null);
-        }
+        list.clear();
         return list;
     }
 }
