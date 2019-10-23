@@ -48,8 +48,9 @@ public class ovning_lektion extends Application {
         Button btnMod = new Button();
         Button btnClear = new Button();
         Button btnEq = new Button();
+        Button btnDel = new Button();
 
-        Button[] buttonsNumber = {btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnPlus, btnMinus, btnTimes, btnDiv, btnEq, btnClear, btnMod};
+        Button[] buttonsNumber = {btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnPlus, btnMinus, btnTimes, btnDiv, btnEq, btnClear, btnMod, btnDel};
 
         return buttonsNumber;
     }
@@ -61,7 +62,7 @@ public class ovning_lektion extends Application {
         int calcValue = 0;
 
         ArrayList<Character> internalText = new ArrayList<Character>();
-        char[] number = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '=', 'C', '%'};
+        char[] number = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '=', 'C', '%', '<'};
 
         for(int i = 0; i < buttonsNumber.length; i++){
             buttonsNumber[i].setMinWidth(50.0f);
@@ -75,7 +76,7 @@ public class ovning_lektion extends Application {
         numbers.getChildren().addAll(buttonsNumber[1], buttonsNumber[2], buttonsNumber[3], buttonsNumber[4], buttonsNumber[5], buttonsNumber[6], buttonsNumber[7], buttonsNumber[8], buttonsNumber[9]);
 
         Group ops = new Group(buttonsNumber[10]);
-        ops.getChildren().addAll(buttonsNumber[11], buttonsNumber[12], buttonsNumber[13], buttonsNumber[16], buttonsNumber[15], buttonsNumber[14]);
+        ops.getChildren().addAll(buttonsNumber[11], buttonsNumber[12], buttonsNumber[13], buttonsNumber[16], buttonsNumber[15], buttonsNumber[14], buttonsNumber[17]);
 
         for(int i = 0; i < buttonsNumber.length; i++){
             int finalCalcValue = calcValue;
@@ -91,6 +92,9 @@ public class ovning_lektion extends Application {
                         paint(buttonsNumber, primaryStage, numbers, ops, internalText);
                     } else if(c == 'C'){
                         pressC(internalText);
+                        paint(buttonsNumber, primaryStage, numbers, ops, internalText);
+                    } else if(c == '<'){
+                        pressBack(internalText);
                         paint(buttonsNumber, primaryStage, numbers, ops, internalText);
                     } else {
                         internalText.add(c);
@@ -248,9 +252,6 @@ public class ovning_lektion extends Application {
                 list.remove(list.size() - 1);
             }
         }
-            /*if(list.size() >= 2 &&  == list.get(list.size() - 2)){
-
-            }*/
         return list;
     }
 
@@ -271,5 +272,11 @@ public class ovning_lektion extends Application {
         for(int i = 0; i < toArray.length(); i++){
             list.add(toArray.charAt(i));
         }
+    }
+
+    public static ArrayList<Character> pressBack(ArrayList<Character> internalText){
+        ArrayList<Character> list = internalText;
+        list.remove(list.size() - 1);
+        return list;
     }
 }
