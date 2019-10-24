@@ -6,22 +6,13 @@ import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Control;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.scene.shape.Rectangle;
 
-import javax.swing.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 // 4  +  2 * 2
-
-//gör så när man klickar på exempel + så loppar den igenom så de inte blir ++ i rutan
 public class ovning_lektion extends Application {
     public static void main(String[] args) { launch(args); }
 
@@ -49,8 +40,9 @@ public class ovning_lektion extends Application {
         Button btnClear = new Button();
         Button btnEq = new Button();
         Button btnDel = new Button();
+        Button btnCom = new Button();
 
-        Button[] buttonsNumber = {btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnPlus, btnMinus, btnTimes, btnDiv, btnEq, btnClear, btnMod, btnDel};
+        Button[] buttonsNumber = {btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnPlus, btnMinus, btnTimes, btnDiv, btnEq, btnClear, btnMod, btnDel, btnCom};
 
         return buttonsNumber;
     }
@@ -58,25 +50,37 @@ public class ovning_lektion extends Application {
     public static void layout(Stage primaryStage) throws Exception{
         Button[] buttonsNumber = buttons();
 
-        int distans = 10;
         int calcValue = 0;
 
         ArrayList<Character> internalText = new ArrayList<Character>();
-        char[] number = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '=', 'C', '%', '<'};
+        char[] number = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '=', 'C', '%', '<', ','};
 
         for(int i = 0; i < buttonsNumber.length; i++){
             buttonsNumber[i].setMinWidth(50.0f);
             buttonsNumber[i].setMinHeight(50.0f);
             buttonsNumber[i].setText(String.valueOf(number[i]));
-            buttonsNumber[i].setTranslateX(distans);
-            distans += 60;
         }
 
-        Group numbers = new Group(buttonsNumber[0]);
-        numbers.getChildren().addAll(buttonsNumber[1], buttonsNumber[2], buttonsNumber[3], buttonsNumber[4], buttonsNumber[5], buttonsNumber[6], buttonsNumber[7], buttonsNumber[8], buttonsNumber[9]);
+        HBox one = new HBox(buttonsNumber[1]);
+        one.getChildren().addAll(buttonsNumber[2], buttonsNumber[3]);
 
-        Group ops = new Group(buttonsNumber[10]);
-        ops.getChildren().addAll(buttonsNumber[11], buttonsNumber[12], buttonsNumber[13], buttonsNumber[16], buttonsNumber[15], buttonsNumber[14], buttonsNumber[17]);
+        HBox two = new HBox(buttonsNumber[4]);
+        two.getChildren().addAll(buttonsNumber[5], buttonsNumber[6]);
+
+        HBox four = new HBox(buttonsNumber[7]);
+        four.getChildren().addAll(buttonsNumber[8], buttonsNumber[9]);
+
+        HBox five = new HBox(buttonsNumber[10]);
+        five.getChildren().addAll(buttonsNumber[0], buttonsNumber[11]);
+
+        HBox six = new HBox(buttonsNumber[12]);
+        six.getChildren().addAll(buttonsNumber[13], buttonsNumber[14]);
+
+        HBox seven = new HBox(buttonsNumber[15]);
+        seven.getChildren().addAll(buttonsNumber[16], buttonsNumber[17]);
+
+        VBox vBox = new VBox(one);
+        vBox.getChildren().addAll(two, four, five, six, seven);
 
         for(int i = 0; i < buttonsNumber.length; i++){
             int finalCalcValue = calcValue;
@@ -89,17 +93,17 @@ public class ovning_lektion extends Application {
                         String calculation = arrayListToString(internalText);
                         int result = calc(calculation);
                         calcOut(result, internalText);
-                        paint(buttonsNumber, primaryStage, numbers, ops, internalText);
+                        paint(buttonsNumber, primaryStage, vBox, internalText);
                     } else if(c == 'C'){
                         pressC(internalText);
-                        paint(buttonsNumber, primaryStage, numbers, ops, internalText);
+                        paint(buttonsNumber, primaryStage, vBox, internalText);
                     } else if(c == '<'){
                         pressBack(internalText);
-                        paint(buttonsNumber, primaryStage, numbers, ops, internalText);
+                        paint(buttonsNumber, primaryStage, vBox, internalText);
                     } else {
                         internalText.add(c);
                         checkLast(internalText);
-                        paint(buttonsNumber, primaryStage, numbers, ops, internalText);
+                        paint(buttonsNumber, primaryStage, vBox, internalText);
                     }
                 }
             });
@@ -107,16 +111,15 @@ public class ovning_lektion extends Application {
         }
 
         BorderPane display = new BorderPane();
-        display.setCenter(numbers);
-        display.setBottom(ops);
+        display.setCenter(vBox);
 
-        Scene scene = new Scene(display, 610, 300);
+        Scene scene = new Scene(display, 300, 400);
         primaryStage.setTitle("Calc");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
 
-    public static void paint(Button[] buttonsNumber, Stage primaryStage, Group numbers, Group ops, ArrayList<Character> internalText) {
+    public static void paint(Button[] buttonsNumber, Stage primaryStage, VBox vBox, ArrayList<Character> internalText) {
         TextField calc = new TextField();
         calc.setDisable(true);
 
@@ -128,10 +131,9 @@ public class ovning_lektion extends Application {
 
         BorderPane display = new BorderPane();
         display.setTop(calc);
-        display.setCenter(numbers);
-        display.setBottom(ops);
+        display.setCenter(vBox);
 
-        Scene scene = new Scene(display, 610, 300);
+        Scene scene = new Scene(display, 300, 400);
         primaryStage.setTitle("Calc");
         primaryStage.setScene(scene);
         primaryStage.show();
