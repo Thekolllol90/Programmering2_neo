@@ -79,8 +79,10 @@ public class ovning_lektion extends Application {
         HBox seven = new HBox(buttonsNumber[15]);
         seven.getChildren().addAll(buttonsNumber[16], buttonsNumber[17]);
 
+        HBox eight = new HBox(buttonsNumber[18]);
+
         VBox vBox = new VBox(one);
-        vBox.getChildren().addAll(two, four, five, six, seven);
+        vBox.getChildren().addAll(two, four, five, six, seven, eight);
 
         for(int i = 0; i < buttonsNumber.length; i++){
             int finalCalcValue = calcValue;
@@ -91,7 +93,7 @@ public class ovning_lektion extends Application {
 
                     if(c == '=') {
                         String calculation = arrayListToString(internalText);
-                        int result = calc(calculation);
+                        double result = calc(calculation);
                         calcOut(result, internalText);
                         paint(buttonsNumber, primaryStage, vBox, internalText);
                     } else if(c == 'C'){
@@ -147,7 +149,7 @@ public class ovning_lektion extends Application {
         return res;
     }
 
-    public static int[] getInt(String text, int start) {
+    public static double[] getInt(String text, int start) {
         int current = start;
         while(current < text.length() && Character.isWhitespace(text.charAt(current))) {
             current++;
@@ -162,29 +164,29 @@ public class ovning_lektion extends Application {
 
         int value = Integer.parseInt(text.substring(start, current));
 
-        return new int[] { value, current };
+        return new double[] { value, current };
     }
 
-    public static int calc(String text) {
+    public static double calc(String text) {
         // 123+ 2
-        int current = 0;
-        int result = 0;
+        double current = 0;
+        double result = 0;
 
         while(current < text.length()) {
-            while(current < text.length() && Character.isWhitespace(text.charAt(current))) {
+            while(current < text.length() && Character.isWhitespace(text.charAt((int) current))) {
                 current++;
             }
 
-            if(Character.isDigit(text.charAt(current))) {
-                int[] values = getInt(text, current);
+            if(Character.isDigit(text.charAt((int) current))) {
+                double[] values = getInt(text, (int) current);
                 result = values[0];
                 current = values[1];
             } else {
-                switch(text.charAt(current)) {
+                switch(text.charAt((int) current)) {
                     case '+': {
                         current++;
-                        int[] values = getInt(text, current);
-                        int right = values[0];
+                        double[] values = getInt(text, (int) current);
+                        double right = values[0];
                         current = values[1];
 
                         result += right;
@@ -192,8 +194,8 @@ public class ovning_lektion extends Application {
 
                     case '*': {
                         current++;
-                        int[] values = getInt(text, current);
-                        int right = values[0];
+                        double[] values = getInt(text, (int) current);
+                        double right = values[0];
                         current = values[1];
 
                         result *= right;
@@ -201,8 +203,8 @@ public class ovning_lektion extends Application {
 
                     case '-': {
                         current++;
-                        int[] values = getInt(text, current);
-                        int right = values[0];
+                        double[] values = getInt(text, (int) current);
+                        double right = values[0];
                         current = values[1];
 
                         result -= right;
@@ -210,8 +212,8 @@ public class ovning_lektion extends Application {
 
                     case '/': {
                         current++;
-                        int[] values = getInt(text, current);
-                        int right = values[0];
+                        double[] values = getInt(text, (int) current);
+                        double right = values[0];
                         current = values[1];
 
                         result /= right;
@@ -219,8 +221,8 @@ public class ovning_lektion extends Application {
 
                     case '%': {
                         current++;
-                        int[] values = getInt(text, current);
-                        int right = values[0];
+                        double[] values = getInt(text, (int) current);
+                        double right = values[0];
                         current = values[1];
 
                         result %= right;
@@ -263,13 +265,13 @@ public class ovning_lektion extends Application {
         return list;
     }
 
-    public static void calcOut(int result, ArrayList<Character> internalText){
+    public static void calcOut(double result, ArrayList<Character> internalText){
         ArrayList<Character> list = internalText;
         list.clear();
 
-        int x = result;
+        double x = result;
         String toArray = "";
-        toArray = Integer.toString(x);
+        toArray = Double.toString(x);
 
         for(int i = 0; i < toArray.length(); i++){
             list.add(toArray.charAt(i));
