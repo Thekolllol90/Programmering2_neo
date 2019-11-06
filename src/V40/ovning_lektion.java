@@ -3,7 +3,6 @@ package V40;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -13,6 +12,8 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 
 // 4  +  2 * 2
+// blev upptagen med att de va lov så glömde uppgiften och hade inte tid att fixa så man kunde använda decimal tal
+
 public class ovning_lektion extends Application {
     public static void main(String[] args) { launch(args); }
 
@@ -53,7 +54,7 @@ public class ovning_lektion extends Application {
         int calcValue = 0;
 
         ArrayList<Character> internalText = new ArrayList<Character>();
-        char[] number = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '=', 'C', '%', '<', ','};
+        char[] number = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '=', 'C', '%', '<', '.'};
 
         for(int i = 0; i < buttonsNumber.length; i++){
             buttonsNumber[i].setMinWidth(50.0f);
@@ -149,20 +150,20 @@ public class ovning_lektion extends Application {
         return res;
     }
 
-    public static double[] getInt(String text, int start) {
-        int current = start;
-        while(current < text.length() && Character.isWhitespace(text.charAt(current))) {
+    public static double[] getDouble(String text, double start) {
+        double current = start;
+        while(current < text.length() && Character.isWhitespace(text.charAt((int) current))) {
             current++;
         }
 
         //  123
         start = current;
 
-        while(current < text.length() && Character.isDigit(text.charAt(current))) {
+        while(current < text.length() && Character.isDigit(text.charAt((int) current))) {
             current++;
         }
 
-        int value = Integer.parseInt(text.substring(start, current));
+        int value = Integer.parseInt(text.substring((int) start, (int) current));
 
         return new double[] { value, current };
     }
@@ -178,32 +179,32 @@ public class ovning_lektion extends Application {
             }
 
             if(Character.isDigit(text.charAt((int) current))) {
-                double[] values = getInt(text, (int) current);
+                double[] values = getDouble(text, current);
                 result = values[0];
                 current = values[1];
             } else {
                 switch(text.charAt((int) current)) {
                     case '+': {
                         current++;
-                        double[] values = getInt(text, (int) current);
+                        double[] values = getDouble(text, current);
                         double right = values[0];
-                        current = values[1];
+                        current = (int) values[1];
 
                         result += right;
                     } break;
 
                     case '*': {
                         current++;
-                        double[] values = getInt(text, (int) current);
+                        double[] values = getDouble(text, current);
                         double right = values[0];
-                        current = values[1];
+                        current = (int) values[1];
 
                         result *= right;
                     } break;
 
                     case '-': {
                         current++;
-                        double[] values = getInt(text, (int) current);
+                        double[] values = getDouble(text, current);
                         double right = values[0];
                         current = values[1];
 
@@ -212,7 +213,7 @@ public class ovning_lektion extends Application {
 
                     case '/': {
                         current++;
-                        double[] values = getInt(text, (int) current);
+                        double[] values = getDouble(text, current);
                         double right = values[0];
                         current = values[1];
 
@@ -221,7 +222,7 @@ public class ovning_lektion extends Application {
 
                     case '%': {
                         current++;
-                        double[] values = getInt(text, (int) current);
+                        double[] values = getDouble(text, current);
                         double right = values[0];
                         current = values[1];
 
@@ -271,7 +272,7 @@ public class ovning_lektion extends Application {
 
         double x = result;
         String toArray = "";
-        toArray = Double.toString(x);
+        toArray = String.valueOf(x);
 
         for(int i = 0; i < toArray.length(); i++){
             list.add(toArray.charAt(i));
