@@ -42,8 +42,9 @@ public class ovning_lektion extends Application {
         Button btnEq = new Button();
         Button btnDel = new Button();
         Button btnCom = new Button();
+        Button btnRot = new Button();
 
-        Button[] buttonsNumber = {btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnPlus, btnMinus, btnTimes, btnDiv, btnEq, btnClear, btnMod, btnDel, btnCom};
+        Button[] buttonsNumber = {btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnPlus, btnMinus, btnTimes, btnDiv, btnEq, btnClear, btnMod, btnDel, btnCom, btnRot};
 
         return buttonsNumber;
     }
@@ -54,7 +55,7 @@ public class ovning_lektion extends Application {
         int calcValue = 0;
 
         ArrayList<Character> internalText = new ArrayList<Character>();
-        char[] number = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '=', 'C', '%', '<', '.'};
+        char[] number = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '=', 'C', '%', '<', '.', 'r'};
 
         for(int i = 0; i < buttonsNumber.length; i++){
             buttonsNumber[i].setMinWidth(50.0f);
@@ -81,6 +82,7 @@ public class ovning_lektion extends Application {
         seven.getChildren().addAll(buttonsNumber[16], buttonsNumber[17]);
 
         HBox eight = new HBox(buttonsNumber[18]);
+        eight.getChildren().addAll(buttonsNumber[19]);
 
         VBox vBox = new VBox(one);
         vBox.getChildren().addAll(two, four, five, six, seven, eight);
@@ -150,83 +152,93 @@ public class ovning_lektion extends Application {
         return res;
     }
 
-    public static double[] getDouble(String text, double start) {
+    public static double[] getDouble(String text, int start) {
         double current = start;
         while(current < text.length() && Character.isWhitespace(text.charAt((int) current))) {
             current++;
         }
 
         //  123
-        start = current;
+        start = (int) current;
 
         while(current < text.length() && Character.isDigit(text.charAt((int) current))) {
             current++;
         }
 
-        int value = Integer.parseInt(text.substring((int) start, (int) current));
+        int value = Integer.parseInt(text.substring(start, (int) current));
 
         return new double[] { value, current };
     }
 
     public static double calc(String text) {
         // 123+ 2
-        double current = 0;
+        int index = 0;
         double result = 0;
+        double left = 0;
 
-        while(current < text.length()) {
-            while(current < text.length() && Character.isWhitespace(text.charAt((int) current))) {
-                current++;
+        while(index < text.length()) {
+            while(index < text.length() && Character.isWhitespace(text.charAt(index))) {
+                index++;
             }
 
-            if(Character.isDigit(text.charAt((int) current))) {
-                double[] values = getDouble(text, current);
-                result = values[0];
-                current = values[1];
+            if(Character.isDigit(text.charAt(index))) {
+                double[] values = getDouble(text, index);
+                left  = values[0];
+                index = (int) values[1];
             } else {
-                switch(text.charAt((int) current)) {
+                switch(text.charAt(index)) {
                     case '+': {
-                        current++;
-                        double[] values = getDouble(text, current);
+                        index++;
+                        double[] values = getDouble(text, index);
                         double right = values[0];
-                        current = (int) values[1];
+                        index = (int) values[1];
 
-                        result += right;
+                        result = left + right;
                     } break;
 
                     case '*': {
-                        current++;
-                        double[] values = getDouble(text, current);
+                        index++;
+                        double[] values = getDouble(text, index);
                         double right = values[0];
-                        current = (int) values[1];
+                        index = (int) values[1];
 
                         result *= right;
                     } break;
 
                     case '-': {
-                        current++;
-                        double[] values = getDouble(text, current);
+                        index++;
+                        double[] values = getDouble(text, index);
                         double right = values[0];
-                        current = values[1];
+                        index = (int) values[1];
 
                         result -= right;
                     } break;
 
                     case '/': {
-                        current++;
-                        double[] values = getDouble(text, current);
+                        index++;
+                        double[] values = getDouble(text, index);
                         double right = values[0];
-                        current = values[1];
+                        index = (int) values[1];
 
                         result /= right;
                     } break;
 
                     case '%': {
-                        current++;
-                        double[] values = getDouble(text, current);
+                        index++;
+                        double[] values = getDouble(text, index);
                         double right = values[0];
-                        current = values[1];
+                        index = (int) values[1];
 
                         result %= right;
+                    } break;
+
+                    case 'r': {
+                        index++;
+                        double[] values = getDouble(text, index);
+                        double right = values[0];
+                        index = (int) values[1];
+
+                        result = Math.sqrt(right);
                     } break;
                 }
             }
@@ -242,6 +254,7 @@ public class ovning_lektion extends Application {
             case '*':
             case '%':
             case '/':
+            case 'r':
                 return true;
             default:
                 return false;
