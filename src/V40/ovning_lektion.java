@@ -98,18 +98,18 @@ public class ovning_lektion extends Application {
                         String calculation = arrayListToString(internalText);
                         double result = calc(calculation);
                         calcOut(result, internalText);
-                        paint(buttonsNumber, primaryStage, vBox, internalText);
+                        paint(primaryStage, vBox, internalText);
                     } else if(c == 'C'){
                         pressC(internalText);
-                        paint(buttonsNumber, primaryStage, vBox, internalText);
+                        paint(primaryStage, vBox, internalText);
                     } else if(c == '<'){
                         pressBack(internalText);
-                        paint(buttonsNumber, primaryStage, vBox, internalText);
+                        paint(primaryStage, vBox, internalText);
                     } else {
                         internalText.add(c);
                         checkLast(internalText);
                         checkFirst(internalText);
-                        paint(buttonsNumber, primaryStage, vBox, internalText);
+                        paint(primaryStage, vBox, internalText);
                     }
                 }
             });
@@ -125,7 +125,7 @@ public class ovning_lektion extends Application {
         primaryStage.show();
     }
 
-    public static void paint(Button[] buttonsNumber, Stage primaryStage, VBox vBox, ArrayList<Character> internalText) {
+    public static void paint(Stage primaryStage, VBox vBox, ArrayList<Character> internalText) {
         TextField calc = new TextField();
         calc.setDisable(true);
 
@@ -153,16 +153,31 @@ public class ovning_lektion extends Application {
         return res;
     }
 
+   /* public static boolean isDigit2(String text, int current){
+        String a = text;
+        int x = current;
+        switch (text.charAt(x)){
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+            case '.':
+                return true;
+            default:
+                return false;
+        }
+    }*/
+
     public static double[] getDouble(String text, int start) {
         int current = start;
-        while(current < text.length() && Character.isWhitespace(text.charAt(current))) {
-            current++;
-        }
 
-        //  123
-        start = current;
-
-        while(current < text.length() && Character.isDigit(text.charAt(current))) {
+        while(current < text.length() && isOperator(text.charAt(current)) == false) {
             current++;
         }
 
@@ -237,10 +252,9 @@ public class ovning_lektion extends Application {
                     case 'r': {
                         index++;
                         double[] values = getDouble(text, index);
-                        right = values[0];
                         index = (int) values[1];
 
-                        result = Math.sqrt(right);
+                        result = Math.sqrt(left);
                     } break;
                 }
             }
