@@ -108,6 +108,7 @@ public class ovning_lektion extends Application {
                     } else {
                         internalText.add(c);
                         checkLast(internalText);
+                        checkFirst(internalText);
                         paint(buttonsNumber, primaryStage, vBox, internalText);
                     }
                 }
@@ -153,19 +154,19 @@ public class ovning_lektion extends Application {
     }
 
     public static double[] getDouble(String text, int start) {
-        double current = start;
-        while(current < text.length() && Character.isWhitespace(text.charAt((int) current))) {
+        int current = start;
+        while(current < text.length() && Character.isWhitespace(text.charAt(current))) {
             current++;
         }
 
         //  123
-        start = (int) current;
+        start = current;
 
-        while(current < text.length() && Character.isDigit(text.charAt((int) current))) {
+        while(current < text.length() && Character.isDigit(text.charAt(current))) {
             current++;
         }
 
-        int value = Integer.parseInt(text.substring(start, (int) current));
+        double value = Double.parseDouble(text.substring(start, current));
 
         return new double[] { value, current };
     }
@@ -175,6 +176,7 @@ public class ovning_lektion extends Application {
         int index = 0;
         double result = 0;
         double left = 0;
+        double right = 0;
 
         while(index < text.length()) {
             while(index < text.length() && Character.isWhitespace(text.charAt(index))) {
@@ -190,7 +192,7 @@ public class ovning_lektion extends Application {
                     case '+': {
                         index++;
                         double[] values = getDouble(text, index);
-                        double right = values[0];
+                        right = values[0];
                         index = (int) values[1];
 
                         result = left + right;
@@ -199,43 +201,43 @@ public class ovning_lektion extends Application {
                     case '*': {
                         index++;
                         double[] values = getDouble(text, index);
-                        double right = values[0];
+                        right = values[0];
                         index = (int) values[1];
 
-                        result *= right;
+                        result = left * right;
                     } break;
 
                     case '-': {
                         index++;
                         double[] values = getDouble(text, index);
-                        double right = values[0];
+                        right = values[0];
                         index = (int) values[1];
 
-                        result -= right;
+                        result = left - right;
                     } break;
 
                     case '/': {
                         index++;
                         double[] values = getDouble(text, index);
-                        double right = values[0];
+                        right = values[0];
                         index = (int) values[1];
 
-                        result /= right;
+                        result = left / right;
                     } break;
 
                     case '%': {
                         index++;
                         double[] values = getDouble(text, index);
-                        double right = values[0];
+                        right = values[0];
                         index = (int) values[1];
 
-                        result %= right;
+                        result = left % right;
                     } break;
 
                     case 'r': {
                         index++;
                         double[] values = getDouble(text, index);
-                        double right = values[0];
+                        right = values[0];
                         index = (int) values[1];
 
                         result = Math.sqrt(right);
@@ -267,6 +269,17 @@ public class ovning_lektion extends Application {
             char first = list.get(list.size() - 1);
             char last = list.get(list.size() - 2);
             if(isOperator(first) && isOperator(last)) {
+                list.remove(list.size() - 1);
+            }
+        }
+        return list;
+    }
+
+    public static ArrayList<Character> checkFirst(ArrayList<Character> internalText){
+        ArrayList<Character> list = internalText;
+        if(list.size() == 1){
+            char first = list.get(list.size() - 1);
+            if(isOperator(first)){
                 list.remove(list.size() - 1);
             }
         }
