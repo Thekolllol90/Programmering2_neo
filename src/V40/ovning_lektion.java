@@ -93,10 +93,11 @@ public class ovning_lektion extends Application {
                 @Override
                 public void handle(ActionEvent event) {
                     char c =  number[finalCalcValue];
+                    calc calc = new calc();
 
                     if(c == '=') {
                         String calculation = arrayListToString(internalText);
-                        double result = calc(calculation);
+                        double result = calc.calculate(calculation);
                         calcOut(result, internalText);
                         paint(primaryStage, vBox, internalText);
                     } else if(c == 'C'){
@@ -116,23 +117,15 @@ public class ovning_lektion extends Application {
             calcValue++;
         }
 
-        BorderPane display = new BorderPane();
-        display.setCenter(vBox);
-
-        Scene scene = new Scene(display, 300, 400);
-        primaryStage.setTitle("Calc");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        paint(primaryStage, vBox, internalText);
     }
 
     public static void paint(Stage primaryStage, VBox vBox, ArrayList<Character> internalText) {
-        TextField calc = new TextField();
-        calc.setDisable(true);
-
         String calcText = "";
-
         calcText = arrayListToString(internalText);
 
+        TextField calc = new TextField();
+        calc.setDisable(true);
         calc.setText(calcText);
 
         BorderPane display = new BorderPane();
@@ -153,117 +146,7 @@ public class ovning_lektion extends Application {
         return res;
     }
 
-   /* public static boolean isDigit2(String text, int current){
-        String a = text;
-        int x = current;
-        switch (text.charAt(x)){
-            case 0:
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-            case 6:
-            case 7:
-            case 8:
-            case 9:
-            case '.':
-                return true;
-            default:
-                return false;
-        }
-    }*/
-
-    public static double[] getDouble(String text, int start) {
-        int current = start;
-
-        while(current < text.length() && isOperator(text.charAt(current)) == false) {
-            current++;
-        }
-
-        double value = Double.parseDouble(text.substring(start, current));
-
-        return new double[] { value, current };
-    }
-
-    public static double calc(String text) {
-        // 123+ 2
-        int index = 0;
-        double result = 0;
-        double left = 0;
-        double right = 0;
-
-        while(index < text.length()) {
-            while(index < text.length() && Character.isWhitespace(text.charAt(index))) {
-                index++;
-            }
-
-            if(Character.isDigit(text.charAt(index))) {
-                double[] values = getDouble(text, index);
-                left  = values[0];
-                index = (int) values[1];
-            } else {
-                switch(text.charAt(index)) {
-                    case '+': {
-                        index++;
-                        double[] values = getDouble(text, index);
-                        right = values[0];
-                        index = (int) values[1];
-
-                        result = left + right;
-                    } break;
-
-                    case '*': {
-                        index++;
-                        double[] values = getDouble(text, index);
-                        right = values[0];
-                        index = (int) values[1];
-
-                        result = left * right;
-                    } break;
-
-                    case '-': {
-                        index++;
-                        double[] values = getDouble(text, index);
-                        right = values[0];
-                        index = (int) values[1];
-
-                        result = left - right;
-                    } break;
-
-                    case '/': {
-                        index++;
-                        double[] values = getDouble(text, index);
-                        right = values[0];
-                        index = (int) values[1];
-
-                        result = left / right;
-                    } break;
-
-                    case '%': {
-                        index++;
-                        double[] values = getDouble(text, index);
-                        right = values[0];
-                        index = (int) values[1];
-
-                        result = left % right;
-                    } break;
-
-                    case 'r': {
-                        index++;
-                        double[] values = getDouble(text, index);
-                        index = (int) values[1];
-
-                        result = Math.sqrt(left);
-                    } break;
-                }
-            }
-        }
-
-        return result;
-    }
-
-    public static boolean isOperator(char c) {
+    public static boolean lastIsOperator(char c) {
         switch (c){
             case '+':
             case '-':
@@ -276,24 +159,34 @@ public class ovning_lektion extends Application {
                 return false;
         }
     }
-
+    public static boolean firstIsOperator(char c) {
+        switch (c){
+            case '+':
+            case '-':
+            case '*':
+            case '%':
+            case '/':
+                return true;
+            default:
+                return false;
+        }
+    }
     public static ArrayList<Character> checkLast(ArrayList<Character> internalText){
         ArrayList<Character> list = internalText;
         if(list.size() >= 2) {
             char first = list.get(list.size() - 1);
             char last = list.get(list.size() - 2);
-            if(isOperator(first) && isOperator(last)) {
+            if(lastIsOperator(first) && lastIsOperator(last)) {
                 list.remove(list.size() - 1);
             }
         }
         return list;
     }
-
     public static ArrayList<Character> checkFirst(ArrayList<Character> internalText){
         ArrayList<Character> list = internalText;
         if(list.size() == 1){
             char first = list.get(list.size() - 1);
-            if(isOperator(first)){
+            if(firstIsOperator(first)){
                 list.remove(list.size() - 1);
             }
         }
