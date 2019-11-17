@@ -122,32 +122,12 @@ public class calc {
     public static double[] getDouble(String text, int start) {
         int current = start;
 
-        while(current < text.length() && isDigit2(text, current)) {
+        while(current < text.length() && is.isDigit2(text, current)) {
             current++;
         }
 
         double value = Double.parseDouble(text.substring(start, current));
 
         return new double[] { value, current };
-    }
-    public static boolean isDigit2(String text, int current){ // kom på att jag skulle anändt "" på alla tal ja ja koden funkar
-        String a = text;
-        int x = current;
-        switch (text.charAt(x)){
-            case '0':
-            case '1':
-            case '2':
-            case '3':
-            case '4':
-            case '5':
-            case '6':
-            case '7':
-            case '8':
-            case '9':
-            case '.':
-                return true;
-            default:
-                return false;
-        }
     }
 }

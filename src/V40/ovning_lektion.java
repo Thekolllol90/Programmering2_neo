@@ -12,7 +12,6 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 
 // 4  +  2 * 2
-// blev upptagen med att de va lov så glömde uppgiften och hade inte tid att fixa så man kunde använda decimal tal
 
 public class ovning_lektion extends Application {
     public static void main(String[] args) { launch(args); }
@@ -94,109 +93,34 @@ public class ovning_lektion extends Application {
                 public void handle(ActionEvent event) {
                     char c =  number[finalCalcValue];
                     calc calc = new calc();
+                    check check = new check();
+                    press press = new press();
+                    string string = new string();
+                    display display = new display();
+
 
                     if(c == '=') {
-                        String calculation = arrayListToString(internalText);
+                        String calculation = string.arrayListToString(internalText);
                         double result = calc.calculate(calculation);
                         calcOut(result, internalText);
-                        paint(primaryStage, vBox, internalText);
+                        display.paint(primaryStage, vBox, internalText);
                     } else if(c == 'C'){
-                        pressC(internalText);
-                        paint(primaryStage, vBox, internalText);
+                        press.pressC(internalText);
+                        display.paint(primaryStage, vBox, internalText);
                     } else if(c == '<'){
-                        pressBack(internalText);
-                        paint(primaryStage, vBox, internalText);
+                        press.pressBack(internalText);
+                        display.paint(primaryStage, vBox, internalText);
                     } else {
                         internalText.add(c);
-                        checkLast(internalText);
-                        checkFirst(internalText);
-                        paint(primaryStage, vBox, internalText);
+                        check.checkLast(internalText);
+                        check.checkFirst(internalText);
+                        display.paint(primaryStage, vBox, internalText);
                     }
                 }
             });
             calcValue++;
         }
-
-        paint(primaryStage, vBox, internalText);
-    }
-
-    public static void paint(Stage primaryStage, VBox vBox, ArrayList<Character> internalText) {
-        String calcText = "";
-        calcText = arrayListToString(internalText);
-
-        TextField calc = new TextField();
-        calc.setDisable(true);
-        calc.setText(calcText);
-
-        BorderPane display = new BorderPane();
-        display.setTop(calc);
-        display.setCenter(vBox);
-
-        Scene scene = new Scene(display, 300, 400);
-        primaryStage.setTitle("Calc");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
-
-    public static String arrayListToString(ArrayList<Character> internalText){
-        String res = "";
-        for(int i = 0; i < internalText.size(); i++){
-            res = res + internalText.get(i);
-        }
-        return res;
-    }
-
-    public static boolean lastIsOperator(char c) {
-        switch (c){
-            case '+':
-            case '-':
-            case '*':
-            case '%':
-            case '/':
-            case 'r':
-                return true;
-            default:
-                return false;
-        }
-    }
-    public static boolean firstIsOperator(char c) {
-        switch (c){
-            case '+':
-            case '-':
-            case '*':
-            case '%':
-            case '/':
-                return true;
-            default:
-                return false;
-        }
-    }
-    public static ArrayList<Character> checkLast(ArrayList<Character> internalText){
-        ArrayList<Character> list = internalText;
-        if(list.size() >= 2) {
-            char first = list.get(list.size() - 1);
-            char last = list.get(list.size() - 2);
-            if(lastIsOperator(first) && lastIsOperator(last)) {
-                list.remove(list.size() - 1);
-            }
-        }
-        return list;
-    }
-    public static ArrayList<Character> checkFirst(ArrayList<Character> internalText){
-        ArrayList<Character> list = internalText;
-        if(list.size() == 1){
-            char first = list.get(list.size() - 1);
-            if(firstIsOperator(first)){
-                list.remove(list.size() - 1);
-            }
-        }
-        return list;
-    }
-
-    public static ArrayList<Character> pressC(ArrayList<Character> internalText){
-        ArrayList<Character> list = internalText;
-        list.clear();
-        return list;
+        display.paint(primaryStage, vBox, internalText);
     }
 
     public static void calcOut(double result, ArrayList<Character> internalText){
@@ -210,11 +134,5 @@ public class ovning_lektion extends Application {
         for(int i = 0; i < toArray.length(); i++){
             list.add(toArray.charAt(i));
         }
-    }
-
-    public static ArrayList<Character> pressBack(ArrayList<Character> internalText){
-        ArrayList<Character> list = internalText;
-        list.remove(list.size() - 1);
-        return list;
     }
 }
