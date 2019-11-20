@@ -12,7 +12,6 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 
 // 4  +  2 * 2
-// skriv inte förstora tal
 public class ovning_lektion extends Application {
     public static void main(String[] args) { launch(args); }
 

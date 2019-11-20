@@ -43,6 +43,7 @@ public class is {
             case '8':
             case '9':
             case '.':
+            case 'E':
                 return true;
             default:
                 return false;
