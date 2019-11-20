@@ -3,14 +3,14 @@ package V40;
 public class calc {
     public calc(){}
 
-    public static double calculate(String numbers){
-        int index = 0;
-        double left = 0;
-        double right = 0;
+    public static double calculate(String numbers){ // en method som räknar ut allt i text fältet
+        int index = 0; // håller koll på vart i fältet man är
+        double left = 0; // talet på  vänster sida av en operator
+        double right = 0; // talet på höger sida
 
         while(index < numbers.length()) {
 
-            if(Character.isDigit(numbers.charAt(index))) {
+            if(Character.isDigit(numbers.charAt(index))) { // om de är ett nummer
                 double[] values = getDouble(numbers, index);
                 left  = values[0];
                 index = (int) values[1];
@@ -18,7 +18,7 @@ public class calc {
                 switch(numbers.charAt(index)) {
                     case '+': {
                         index++;
-                        double [] val = plus(index, left, right, numbers);
+                        double [] val = plus(index, left, right, numbers); // kallar på en method som räknar och ger tillbaka resultat och vart i fältet man är
                         left = val[0];
                         index = (int) val[1];
                     } break;
@@ -64,12 +64,12 @@ public class calc {
         return left;
     }
 
-    public static double[] plus(int index, double left, double right, String numbers){
+    public static double[] plus(int index, double left, double right, String numbers){ // räknar ut vänster och höger sida av ett tecken
         double[] values = getDouble(numbers, index);
         right = values[0];
-        double res = left + right;
+        double res = left + right; // lägger ihop vänster och höger sida
         index = (int) values[1];
-        double[] value = {res, index};
+        double[] value = {res, index}; // skickar tillbaka vart man är i listan och ett resultat på uträkningen
 
         return value;
     }
@@ -119,7 +119,7 @@ public class calc {
         return value;
     }
 
-    public static double[] getDouble(String text, int start) {
+    public static double[] getDouble(String text, int start) { // tar reda på talet i fältet
         int current = start;
 
         while(current < text.length() && is.isDigit2(text, current)) {

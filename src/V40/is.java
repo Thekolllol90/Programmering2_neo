@@ -3,7 +3,7 @@ package V40;
 public class is {
     public is(){}
 
-    public static boolean lastIsOperator(char c) {
+    public static boolean lastIsOperator(char c) { // om de sista i strängen är en operator
         switch (c){
             case '+':
             case '-':
@@ -16,7 +16,7 @@ public class is {
                 return false;
         }
     }
-    public static boolean firstIsOperator(char c) {
+    public static boolean firstIsOperator(char c) { // om de första är en operator förutom roten ur då de inte funker annars
         switch (c){
             case '+':
             case '-':
@@ -28,7 +28,7 @@ public class is {
                 return false;
         }
     }
-    public static boolean isDigit2(String text, int current){ // kom på att jag skulle anändt "" på alla tal ja ja koden funkar
+    public static boolean isDigit2(String text, int current){ // kollar om de är en sifra eller "."
         String a = text;
         int x = current;
         switch (text.charAt(x)){

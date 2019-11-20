@@ -10,13 +10,13 @@ import java.util.ArrayList;
 
 public class display {
     public display(){}
-    public static void paint(Stage primaryStage, VBox vBox, ArrayList<Character> internalText) {
+    public static void paint(Stage primaryStage, VBox vBox, ArrayList<Character> internalText) { // methoden som alltid målar
         String calcText = "";
-        calcText = string.arrayListToString(internalText);
+        calcText = string.arrayListToString(internalText); // gör om arrayn till en string
 
         TextField calc = new TextField();
-        calc.setDisable(true);
-        calc.setText(calcText);
+        calc.setDisable(true); // gör så att man inte kan skriva in något utan att klicka på knapparna
+        calc.setText(calcText); // gör så att texten i textfeltet är samma som calcText
 
         BorderPane display = new BorderPane();
         display.setTop(calc);

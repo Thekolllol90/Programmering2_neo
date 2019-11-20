@@ -20,8 +20,7 @@ public class ovning_lektion extends Application {
     public void start(Stage primaryStage) throws Exception{
         layout(primaryStage);
     }
-
-    public static Button[] buttons(){
+    public static Button[] buttons(){ //en method som skapra alla knappar och lägger dom i en lista som den returnar
         Button btn0 = new Button();
         Button btn1 = new Button();
         Button btn2 = new Button();
@@ -47,16 +46,15 @@ public class ovning_lektion extends Application {
 
         return buttonsNumber;
     }
+    public static void layout(Stage primaryStage) throws Exception{ // en method som ger alla knappar sina tecken storlek och vad som händer när man klickar på en knapp
+        Button[] buttonsNumber = buttons(); // hämtar en lista med alla knappar
 
-    public static void layout(Stage primaryStage) throws Exception{
-        Button[] buttonsNumber = buttons();
+        int calcValue = 0; //håller koll på vilken knapp man är på
 
-        int calcValue = 0;
+        ArrayList<Character> internalText = new ArrayList<Character>(); // en lista som håller alla number och operatorer man klickar på
+        char[] number = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '=', 'C', '%', '<', '.', 'r'}; // en lista som ska ge knapparna sina tecken
 
-        ArrayList<Character> internalText = new ArrayList<Character>();
-        char[] number = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '=', 'C', '%', '<', '.', 'r'};
-
-        for(int i = 0; i < buttonsNumber.length; i++){
+        for(int i = 0; i < buttonsNumber.length; i++){ // en loop som ger alla knappar en storlek och ger dom sitt tecken
             buttonsNumber[i].setMinWidth(50.0f);
             buttonsNumber[i].setMinHeight(50.0f);
             buttonsNumber[i].setText(String.valueOf(number[i]));
@@ -81,36 +79,35 @@ public class ovning_lektion extends Application {
         seven.getChildren().addAll(buttonsNumber[16], buttonsNumber[17]);
 
         HBox eight = new HBox(buttonsNumber[18]);
-        eight.getChildren().addAll(buttonsNumber[19]);
+        eight.getChildren().addAll(buttonsNumber[19]); // skapar columner med knappar
 
         VBox vBox = new VBox(one);
-        vBox.getChildren().addAll(two, four, five, six, seven, eight);
+        vBox.getChildren().addAll(two, four, five, six, seven, eight); // tar alla rader och lägger dom i rader
 
-        for(int i = 0; i < buttonsNumber.length; i++){
+        for(int i = 0; i < buttonsNumber.length; i++){ // en loop som säger åt knapparna vad dom ska göra när man klickar på dom
             int finalCalcValue = calcValue;
             buttonsNumber[i].setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
-                    char c =  number[finalCalcValue];
+                    char c =  number[finalCalcValue]; // håller koll på numret på knappen
                     calc calc = new calc();
                     check check = new check();
                     press press = new press();
                     string string = new string();
                     display display = new display();
 
-
-                    if(c == '=') {
+                    if(c == '=') { // om knappen man klickar på är "=" så gör den om arrayn och skickar den till methoden som räknar ut och sedan målar den
                         String calculation = string.arrayListToString(internalText);
                         double result = calc.calculate(calculation);
                         calcOut(result, internalText);
                         display.paint(primaryStage, vBox, internalText);
-                    } else if(c == 'C'){
+                    } else if(c == 'C'){ // kallar på en method som rennsar arrayn och målar
                         press.pressC(internalText);
                         display.paint(primaryStage, vBox, internalText);
-                    } else if(c == '<'){
+                    } else if(c == '<'){ // kallar på en method som tar bort de sista i arrayn och målar
                         press.pressBack(internalText);
                         display.paint(primaryStage, vBox, internalText);
-                    } else {
+                    } else { // lägger till tecknet på knappan man klickar på i arrayn och målar
                         internalText.add(c);
                         check.checkLast(internalText);
                         check.checkFirst(internalText);
@@ -120,18 +117,17 @@ public class ovning_lektion extends Application {
             });
             calcValue++;
         }
-        display.paint(primaryStage, vBox, internalText);
+        display.paint(primaryStage, vBox, internalText); // kallar på methoden som målar så att man får upp ett fönster
     }
-
-    public static void calcOut(double result, ArrayList<Character> internalText){
+    public static void calcOut(double result, ArrayList<Character> internalText){ // gör om resultatet från uträkningen till en array
         ArrayList<Character> list = internalText;
         list.clear();
 
         double x = result;
         String toArray = "";
-        toArray = String.valueOf(x);
+        toArray = String.valueOf(x); // gör double till string
 
-        for(int i = 0; i < toArray.length(); i++){
+        for(int i = 0; i < toArray.length(); i++){ // gör string till array
             list.add(toArray.charAt(i));
         }
     }
