@@ -112,7 +112,7 @@ public class calc {
     public static double[] rot(int index, double left, double right, String numbers) {
         double[] values = getDouble(numbers, index);
         right = values[0];
-        double res = Math.sqrt(right);
+        double res = left * Math.sqrt(right);
         index = (int) values[1];
         double[] value = {res, index};
 
