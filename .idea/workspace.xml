@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00aa9247-76a4-4234-ad5b-9334aff8accf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/V40/layout.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Programmering2/V40/calc.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programmering2/V40/calc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Programmering2/V40/check.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programmering2/V40/check.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Programmering2/V40/ovning_lektion$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programmering2/V40/ovning_lektion$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Programmering2/V40/ovning_lektion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programmering2/V40/ovning_lektion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/V40/calc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/V40/calc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/V40/check.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/V40/check.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/V40/display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/V40/display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/V40/is.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/V40/is.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/V40/ovning_lektion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/V40/ovning_lektion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/V40/press.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/V40/press.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/V40/string.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/V40/string.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

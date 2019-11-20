@@ -7,6 +7,9 @@ public class press {
 
     public static ArrayList<Character> pressBack(ArrayList<Character> internalText){ // tar bort de sista i arrayn
         ArrayList<Character> list = internalText;
+        if(internalText.size() < 1){
+            return list;
+        }
         list.remove(list.size() - 1); // tar bort den sista
         return list;
     }
