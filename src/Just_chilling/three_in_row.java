@@ -5,10 +5,9 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
+
 
 public class three_in_row extends Application {
 
@@ -37,15 +36,18 @@ public class three_in_row extends Application {
     public static Button[] sqrFunction(){
         Button[] funcsqr = squares();
         final int[] turn = {0};
+        int current = 0;
             for(int i = 0; i < funcsqr.length; i++){
+                current = i;
+                int finalCurrent = current;
                 funcsqr[i].setOnAction(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent event) {
                         if(turn[0] == 0){
-                            //set button color red
+                            funcsqr[finalCurrent].setStyle("-fx-base: red;");
                             turn[0] = 1;
                         }else if (turn[0] == 1){
-                            //set button color blue
+                            funcsqr[finalCurrent].setStyle("-fx-base: blue;");
                             turn[0] = 0;
                         }
                     }
@@ -56,16 +58,15 @@ public class three_in_row extends Application {
     }
 
     public static void playGame(Stage primaryStage){
-        VBox layout = layout();
 
-        display(layout, primaryStage);
+        display(primaryStage);
     }
 
-    public static void display(VBox layout, Stage primaryStage){
-        BorderPane view = new BorderPane();
-        view.setCenter(layout);
+    public static void display(Stage primaryStage){
+        StackPane view = new StackPane();
+        view.getChildren().add(layout());
 
-        Scene scene = new Scene(view, 900, 900);
+        Scene scene = new Scene(view,300, 300);
         primaryStage.setTitle("3 in row");
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -88,8 +89,8 @@ public class three_in_row extends Application {
         HBox row3 = new HBox();
         row1.getChildren().addAll(squares[6], squares[7], squares[8]);
 
-        VBox layout = new VBox();
-        layout.getChildren().addAll(row1, row2, row3);
+        VBox layout = new VBox(row1, row2, row3);
+        layout.getChildren().addAll();
 
         return layout;
     }

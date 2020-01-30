@@ -7,10 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00aa9247-76a4-4234-ad5b-9334aff8accf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Just_chilling/tetris_test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/V47/car.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/V49/main2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Programmering2/Just_chilling/tetris_test$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Programmering2/Just_chilling/tetris_test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Just_chilling/three_in_row.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Just_chilling/three_in_row.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -133,14 +133,14 @@
       <item itemvalue="Application.läxa_flagga" />
       <item itemvalue="Application.ovning_lektion" />
       <item itemvalue="Application.main" />
-      <item itemvalue="JAR Application.Unnamed" />
       <item itemvalue="Application.three_in_row" />
+      <item itemvalue="JAR Application.Unnamed" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.three_in_row" />
-        <item itemvalue="Application.main" />
         <item itemvalue="Application.ovning_lektion" />
+        <item itemvalue="Application.main" />
         <item itemvalue="Application.läxa_flagga" />
         <item itemvalue="Application.ett" />
       </list>
