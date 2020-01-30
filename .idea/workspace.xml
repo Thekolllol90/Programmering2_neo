@@ -7,8 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00aa9247-76a4-4234-ad5b-9334aff8accf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Just_chilling/buttonLayout.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Just_chilling/buttons.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Just_chilling/check.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Just_chilling/fullColor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Just_chilling/resetButtons.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Programmering2/Just_chilling/three_in_row$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programmering2/Just_chilling/three_in_row$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Programmering2/Just_chilling/three_in_row$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Programmering2/Just_chilling/three_in_row.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programmering2/Just_chilling/three_in_row.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Just_chilling/three_in_row.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Just_chilling/three_in_row.java" afterDir="false" />
     </list>
