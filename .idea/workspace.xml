@@ -7,9 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00aa9247-76a4-4234-ad5b-9334aff8accf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/tetris/tetris.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Just_chilling/three_in_row.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Just_chilling/three_in_row.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tetris/tetris.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/tetris.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
