@@ -7,14 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00aa9247-76a4-4234-ad5b-9334aff8accf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Just_chilling/buttonLayout.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Just_chilling/buttons.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Just_chilling/check.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Just_chilling/fullColor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Just_chilling/resetButtons.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tetris/tetris.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Programmering2/Just_chilling/three_in_row$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Programmering2/Just_chilling/three_in_row.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programmering2/Just_chilling/three_in_row.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Just_chilling/three_in_row.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Just_chilling/three_in_row.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,23 +48,10 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.three_in_row">
+  <component name="RunManager" selected="Application.tetris">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="v36.hemläxa" />
       <module name="Programmering2" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ett" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="genomgång.ett" />
-      <module name="Programmering2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="genomgång.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -114,6 +95,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="tetris" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="tetris.tetris" />
+      <module name="Programmering2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tetris.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="three_in_row" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Just_chilling.three_in_row" />
       <module name="Programmering2" />
@@ -134,20 +128,20 @@
     </configuration>
     <list>
       <item itemvalue="Application.Unnamed" />
-      <item itemvalue="Application.ett" />
       <item itemvalue="Application.läxa_flagga" />
       <item itemvalue="Application.ovning_lektion" />
       <item itemvalue="Application.main" />
       <item itemvalue="Application.three_in_row" />
       <item itemvalue="JAR Application.Unnamed" />
+      <item itemvalue="Application.tetris" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.tetris" />
         <item itemvalue="Application.three_in_row" />
         <item itemvalue="Application.ovning_lektion" />
         <item itemvalue="Application.main" />
         <item itemvalue="Application.läxa_flagga" />
-        <item itemvalue="Application.ett" />
       </list>
     </recent_temporary>
   </component>
