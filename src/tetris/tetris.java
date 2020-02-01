@@ -39,8 +39,8 @@ public class tetris extends Application {
         HBox row10 = new HBox();
 
         for(int i = 0; i < sqr.length; i++){
-            sqr[i].setMinWidth(10.0f);
-            sqr[i].setMinHeight(10.0f);
+            sqr[i].setMinWidth(100.0f);
+            sqr[i].setMinHeight(100.0f);
         }
 
         for(int i = 0; i < sqr.length; i++) {
@@ -74,10 +74,31 @@ public class tetris extends Application {
             if(i > 89 && i < 100) {
                 row10.getChildren().add(sqr[i]);
             }
-            layout.getChildren().addAll(row1, row2, row3, row4, row5, row6, row7, row8, row9, row10);
         }
+        layout.getChildren().addAll(row1, row2, row3, row4, row5, row6, row7, row8, row9, row10);
         return layout;
     }
+
+    public static int[] tetrisShapes(Button[] sqr){
+        int x = 5;
+        double shape = Math.random()*0.2;
+        int intShape = (int) shape;
+        int[] shapes = {};
+        if(intShape == 1) {
+            shapes = new int[]{x, x - 1, x - 2, x - 12};
+        }
+        return shapes;
+    }
+
+    /*public static Button[] colorShape(int[] shapes, Button[] sqr){
+        if(shapes.length == 4) {
+            sqr[shapes[0]].setStyle("-fx-color: red");
+            sqr[shapes[1]].setStyle("-fx-color: red");
+            sqr[shapes[2]].setStyle("-fx-color: red");
+            sqr[shapes[3]].setStyle("-fx-color: red");
+        }
+        return sqr;
+    }*/
 
     public static void display(Stage primaryStage){
         StackPane view = new StackPane();
