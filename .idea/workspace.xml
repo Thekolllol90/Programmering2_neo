@@ -7,8 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00aa9247-76a4-4234-ad5b-9334aff8accf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Dont_know_yet/Dont know yet txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Dont_know_yet/some_code.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tetris/tetris.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/tetris.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +20,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin File" />
         <option value="Class" />
       </list>
     </option>
@@ -47,7 +49,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.tetris">
+  <component name="RunManager" selected="Application.läxa_flagga">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="v36.hemläxa" />
       <module name="Programmering2" />
@@ -136,11 +138,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.läxa_flagga" />
         <item itemvalue="Application.tetris" />
         <item itemvalue="Application.three_in_row" />
         <item itemvalue="Application.ovning_lektion" />
         <item itemvalue="Application.main" />
-        <item itemvalue="Application.läxa_flagga" />
       </list>
     </recent_temporary>
   </component>

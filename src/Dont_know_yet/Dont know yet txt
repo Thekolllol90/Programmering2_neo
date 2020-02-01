@@ -1,0 +1,18 @@
+The current plan is to create snake inside a 20x20 grid(wish me luck)
+
+First create 400 squares
+Place 20 squares in a HBox*20
+20-HBox in VBox
+four buttons in right side to control the snake direction
+print out in window
+
+create method for placement of random fruit
+if live fruit = true dont generate new
+need all 400 squares in []
+math.random to get random square
+if square is snake part boolean again = true
+set live fruit = true
+variable to check number of eaten fruit
+
+method for movement
+if direction is --> paint current + 1
