@@ -12,7 +12,8 @@ import javafx.stage.Stage;
 
 
 public class tetris extends Application {
-    public void start(Stage primaryStage) throws InterruptedException {
+    public void start(Stage primaryStage){
+
         display(primaryStage);
     }
 
@@ -80,13 +81,25 @@ public class tetris extends Application {
     }
 
     public static int[] tetrisShapes(){
-        int x = (int) Math.random()*7;
+        //generate shape first decide position later so i don't go to far to the side
+        int x = (int) (Math.random()*7);
+        System.out.println(x);
         //double shape = Math.random();
-        double shape = 1;
+        double shape = 6;
         int intShape = (int) shape;
         int[] shapes = {};
         if(intShape == 1) {
             shapes = new int[]{x, x + 1, x + 2, x + 12};
+        }else if(intShape == 2){
+            shapes = new int[]{x, x + 1, x + 2, x + 11};
+        }else if(intShape == 3){
+            shapes = new int[]{x, x + 1, x + 11};
+        }else if(intShape == 4){
+            shapes = new int[]{x, x + 10, x + 20, x + 30};
+        }else if(intShape == 5){
+            shapes = new int[]{x, x + 1, x + 10, x + 11};
+        }else if(intShape == 6){
+            shapes = new int[]{x, x + 1, x + 11, x + 12};
         }
         return shapes;
     }
@@ -111,8 +124,7 @@ public class tetris extends Application {
         return sqr;
     }*/
 
-    public static void display(Stage primaryStage) throws InterruptedException {
-        while (true){
+    public static void display(Stage primaryStage){
             StackPane view = new StackPane();
             view.getChildren().add(layout());
 
@@ -120,7 +132,6 @@ public class tetris extends Application {
             primaryStage.setTitle("Tetris");
             primaryStage.setScene(scene);
             primaryStage.show();
-            Thread.sleep(2000);
-        }
+
     }
 }
