@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 
 public class tetris extends Application {
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws InterruptedException {
         display(primaryStage);
     }
 
@@ -25,7 +25,7 @@ public class tetris extends Application {
     }
 
     public static VBox layout(){
-        Button[] sqr = createSqr();
+        Button[] sqr = moveDown();
         VBox layout = new VBox();
         HBox row1 = new HBox();
         HBox row2 = new HBox();
@@ -79,15 +79,26 @@ public class tetris extends Application {
         return layout;
     }
 
-    public static int[] tetrisShapes(Button[] sqr){
-        int x = 5;
-        double shape = Math.random()*0.2;
+    public static int[] tetrisShapes(){
+        int x = (int) Math.random()*7;
+        //double shape = Math.random();
+        double shape = 1;
         int intShape = (int) shape;
         int[] shapes = {};
         if(intShape == 1) {
-            shapes = new int[]{x, x - 1, x - 2, x - 12};
+            shapes = new int[]{x, x + 1, x + 2, x + 12};
         }
         return shapes;
+    }
+
+    public static Button[] moveDown(){
+        Button[] sqr = createSqr();
+        int[] shape = tetrisShapes();
+        for(int i = 0; i < shape.length; i++){
+            sqr[shape[i]].setStyle("-fx-base: red;");
+        }
+
+        return sqr;
     }
 
     /*public static Button[] colorShape(int[] shapes, Button[] sqr){
@@ -100,13 +111,16 @@ public class tetris extends Application {
         return sqr;
     }*/
 
-    public static void display(Stage primaryStage){
-        StackPane view = new StackPane();
-        view.getChildren().add(layout());
+    public static void display(Stage primaryStage) throws InterruptedException {
+        while (true){
+            StackPane view = new StackPane();
+            view.getChildren().add(layout());
 
-        Scene scene = new Scene(view, 1000, 1000);
-        primaryStage.setTitle("Tetris");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+            Scene scene = new Scene(view, 1000, 1000);
+            primaryStage.setTitle("Tetris");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+            Thread.sleep(2000);
+        }
     }
 }
