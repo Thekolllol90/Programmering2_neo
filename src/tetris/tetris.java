@@ -82,10 +82,20 @@ public class tetris extends Application {
 
     public static int[] tetrisShapes(){
         //generate shape first decide position later so i don't go to far to the side
-        int x = (int) (Math.random()*7);
+        int shape = (int) ((Math.random()*5)+1);
+        int y = 0;
+        if(shape == 1 || shape == 2){
+            y = 7;
+        }else if(shape == 3 || shape == 5){
+            y = 8;
+        }else if(shape == 4){
+            y = 9;
+        }else if(shape == 6){
+            y = 6;
+        }
+
+        int x = (int) (Math.random()*y);
         System.out.println(x);
-        //double shape = Math.random();
-        double shape = 6;
         int intShape = (int) shape;
         int[] shapes = {};
         if(intShape == 1) {
