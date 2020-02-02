@@ -121,17 +121,20 @@ public class tetris extends Application {
     }
 
     public static Button[] moveDown(){
-        //create varible isMoving if true dont generate new shape
-        //use boolean color
+        //create variable isMoving if true don't generate new shape
+        //use boolean[] color
+        //use int rowRemoved
         int[] shape = {};
         int spaceDown = 0;
         Button[] sqr = createSqr();
         Boolean generate = true;
         Boolean moveRight = false;
         Boolean moveLeft = false;
+        int rows = 0;
         int down = 10;
         int left = -1;
         int right = 1;
+        int rowRemoved = 10 * rows;
 
         if(generate == true) {
             shape = generateShape();
