@@ -13,10 +13,11 @@ import javafx.stage.Stage;
 
 public class tetris extends Application {
     public void start(Stage primaryStage){
+        display(primaryStage);
         for(int i = 0; i < 10; i++) {
             try {
-                Thread.sleep(1000);
-                display(primaryStage);
+                Thread.sleep(10);
+                layout();
             } catch (Exception e) {
                 System.out.println(e);
             }
@@ -124,6 +125,7 @@ public class tetris extends Application {
         //create variable isMoving if true don't generate new shape
         //use boolean[] color
         //use int rowRemoved
+        //create left right buttons
         int[] shape = {};
         int spaceDown = 0;
         Button[] sqr = createSqr();
@@ -165,7 +167,7 @@ public class tetris extends Application {
         view.getChildren().add(layout());
 
 
-        Scene scene = new Scene(view, 1000, 1100);
+        Scene scene = new Scene(view, 1000, 1000);
         primaryStage.setTitle("Tetris");
         primaryStage.setScene(scene);
         primaryStage.show();
