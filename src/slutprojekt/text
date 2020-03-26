@@ -1,0 +1,5 @@
+min tanke är att göra ett tre i rad.
+Jag ska göra typ en start meny
+3x3 knappar med if som kollar vems tur och om det är färg på knappen, möjligen chekbox
+en class som skappar alla knappar och lägger in dom i en 3x3 grid och ger dom on click funktioner
+en method/class som ändrar färg på knapparna

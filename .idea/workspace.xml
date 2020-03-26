@@ -7,16 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00aa9247-76a4-4234-ad5b-9334aff8accf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/V09/div.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/V10/BinaryObserver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/V10/HexaObserver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/V10/Observer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/V10/ObserverPatternDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/V10/OctalObserver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/V10/Subject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Programmering2/V09/pattern.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programmering2/V09/pattern.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/V09/pattern.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/V09/pattern.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/slutprojekt/text" beforeDir="false" afterPath="$PROJECT_DIR$/src/slutprojekt/text" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
