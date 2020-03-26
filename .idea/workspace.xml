@@ -7,15 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00aa9247-76a4-4234-ad5b-9334aff8accf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/V09/Context.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/V09/OperationAdd.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/V09/OperationMultiply.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/V09/OperationSubstract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/V09/Strategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/V09/pattern.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/V09/div.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/V10/BinaryObserver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/V10/HexaObserver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/V10/Observer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/V10/ObserverPatternDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/V10/OctalObserver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/V10/Subject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Programmering2/tetris/tetris.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programmering2/tetris/tetris.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tetris/tetris.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/tetris.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Programmering2/V09/pattern.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programmering2/V09/pattern.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/V09/pattern.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/V09/pattern.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +38,7 @@
   <component name="ProjectId" id="1QjaWM2meZTDdN7HxyfhICx2Q7D" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/node/TE17C-PRRPRR02" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -55,7 +56,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.tetris">
+  <component name="RunManager" selected="Application.ObserverPatternDemo">
+    <configuration name="ObserverPatternDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="V10.ObserverPatternDemo" />
+      <module name="Programmering2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="V10.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="v36.hemläxa" />
       <module name="Programmering2" />
@@ -69,19 +83,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="v39.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ovning_lektion" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="V40.ovning_lektion" />
-      <module name="Programmering2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="V40.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -136,19 +137,19 @@
     <list>
       <item itemvalue="Application.Unnamed" />
       <item itemvalue="Application.läxa_flagga" />
-      <item itemvalue="Application.ovning_lektion" />
       <item itemvalue="Application.three_in_row" />
       <item itemvalue="Application.tetris" />
-      <item itemvalue="JAR Application.Unnamed" />
       <item itemvalue="Application.pattern" />
+      <item itemvalue="Application.ObserverPatternDemo" />
+      <item itemvalue="JAR Application.Unnamed" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.tetris" />
+        <item itemvalue="Application.ObserverPatternDemo" />
         <item itemvalue="Application.pattern" />
+        <item itemvalue="Application.tetris" />
         <item itemvalue="Application.three_in_row" />
         <item itemvalue="Application.läxa_flagga" />
-        <item itemvalue="Application.ovning_lektion" />
       </list>
     </recent_temporary>
   </component>
