@@ -22,10 +22,10 @@ public class buttonsLayout {
         row1.getChildren().addAll(buttons[0], buttons[1], buttons[2]);
 
         HBox row2 = new HBox();
-        row1.getChildren().addAll(buttons[0], buttons[1], buttons[2]);
+        row2.getChildren().addAll(buttons[3], buttons[4], buttons[5]);
 
         HBox row3 = new HBox();
-        row1.getChildren().addAll(buttons[0], buttons[1], buttons[2]);
+        row3.getChildren().addAll(buttons[6], buttons[7], buttons[8]);
 
         VBox layout = new VBox();
         layout.getChildren().addAll(row1, row2, row3);
