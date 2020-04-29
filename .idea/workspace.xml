@@ -7,8 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00aa9247-76a4-4234-ad5b-9334aff8accf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Slutprojekt_prog2/buttons.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Slutprojekt_prog2/buttonsLayout.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Slutprojekt_prog2/controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Slutprojekt_prog2/main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/slutprojekt/text" beforeDir="false" afterPath="$PROJECT_DIR$/src/slutprojekt/text" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +51,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ObserverPatternDemo">
+  <component name="RunManager" selected="Application.main">
     <configuration name="ObserverPatternDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="V10.ObserverPatternDemo" />
       <module name="Programmering2" />
@@ -69,12 +72,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="läxa_flagga" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="v39.läxa_flagga" />
+    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Slutprojekt_prog2.main" />
       <module name="Programmering2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="v39.*" />
+          <option name="PATTERN" value="Slutprojekt_prog2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -128,20 +131,20 @@
     </configuration>
     <list>
       <item itemvalue="Application.Unnamed" />
-      <item itemvalue="Application.läxa_flagga" />
       <item itemvalue="Application.three_in_row" />
       <item itemvalue="Application.tetris" />
       <item itemvalue="Application.pattern" />
       <item itemvalue="Application.ObserverPatternDemo" />
       <item itemvalue="JAR Application.Unnamed" />
+      <item itemvalue="Application.main" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.main" />
+        <item itemvalue="Application.three_in_row" />
         <item itemvalue="Application.ObserverPatternDemo" />
         <item itemvalue="Application.pattern" />
         <item itemvalue="Application.tetris" />
-        <item itemvalue="Application.three_in_row" />
-        <item itemvalue="Application.läxa_flagga" />
       </list>
     </recent_temporary>
   </component>
