@@ -1,6 +1,11 @@
 package Slutprojekt_prog2;
 
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 
 public class buttons {
@@ -16,23 +21,23 @@ public class buttons {
     }
 
     public static Button[] ButtonFunction(Button[] buttons){
+        requests requests = new requests();
         int current;
         final Boolean[] playerTurn = {true};
-        Paint color1 = null;
-        Paint color2 = null;
+        Color[] color = requests.GameColors();
         for(int i = 0; i < buttons.length; i++){
             current = i;
 
             int finalCurrent = current;
             buttons[i].setOnAction(event -> {
-                Paint currentColor = buttons[finalCurrent].getBackground().getFills().get(0).getFill();
+                Color currentColor = (Color)buttons[finalCurrent].getBackground().getFills().get(0).getFill();
 
-                if(currentColor != color1 || currentColor != color2){
+                if(currentColor != color[0] || currentColor != color[1]){
                     if(playerTurn[0] == true){
-                        buttons[finalCurrent].setStyle("-fx-base: red;");
+                        buttons[finalCurrent].setBackground(new Background(new BackgroundFill(color[0], CornerRadii.EMPTY, Insets.EMPTY)));
                         playerTurn[0] = false;
                     } else{
-                        buttons[finalCurrent].setStyle("-fx-base: blue;");
+                        buttons[finalCurrent].setBackground(new Background(new BackgroundFill(color[1], CornerRadii.EMPTY, Insets.EMPTY)));
                         playerTurn[0] = true;
                     }
                 }
