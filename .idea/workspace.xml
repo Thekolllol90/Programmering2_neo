@@ -8,9 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="00aa9247-76a4-4234-ad5b-9334aff8accf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Programmering2/Slutprojekt_prog2/buttons.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programmering2/Slutprojekt_prog2/buttons.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Programmering2/Slutprojekt_prog2/controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programmering2/Slutprojekt_prog2/controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Slutprojekt_prog2/buttonsLayout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Slutprojekt_prog2/buttonsLayout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Slutprojekt_prog2/buttons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Slutprojekt_prog2/buttons.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Slutprojekt_prog2/controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Slutprojekt_prog2/controller.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -135,8 +133,8 @@
       <item itemvalue="Application.tetris" />
       <item itemvalue="Application.pattern" />
       <item itemvalue="Application.ObserverPatternDemo" />
-      <item itemvalue="JAR Application.Unnamed" />
       <item itemvalue="Application.main" />
+      <item itemvalue="JAR Application.Unnamed" />
     </list>
     <recent_temporary>
       <list>

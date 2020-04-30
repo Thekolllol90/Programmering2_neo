@@ -1,12 +1,9 @@
 package Slutprojekt_prog2;
 
-import Just_chilling.buttonLayout;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-
-import java.awt.*;
 
 public class controller {
     public controller(){}
@@ -16,6 +13,7 @@ public class controller {
         buttonsLayout buttonsLayout = new buttonsLayout();
 
         Button[] buttons1 = buttons.CreateButtons();
+        buttons.ButtonFunction(buttons1);
         buttonsLayout.buttonStyle(buttons1);
 
         StackPane view = new StackPane();
