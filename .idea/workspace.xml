@@ -7,10 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00aa9247-76a4-4234-ad5b-9334aff8accf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Slutprojekt_prog2/check.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Programmering2/Slutprojekt_prog2/controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programmering2/Slutprojekt_prog2/controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Slutprojekt_prog2/cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Slutprojekt_prog2/cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Slutprojekt_prog2/check.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Slutprojekt_prog2/check.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Slutprojekt_prog2/controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Slutprojekt_prog2/controller.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,7 +50,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.tetris">
+  <component name="RunManager" selected="Application.main">
     <configuration name="ObserverPatternDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="V10.ObserverPatternDemo" />
       <module name="Programmering2" />
@@ -140,8 +139,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.tetris" />
         <item itemvalue="Application.main" />
+        <item itemvalue="Application.tetris" />
         <item itemvalue="Application.three_in_row" />
         <item itemvalue="Application.ObserverPatternDemo" />
         <item itemvalue="Application.pattern" />

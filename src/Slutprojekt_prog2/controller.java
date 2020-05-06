@@ -31,6 +31,9 @@ public class controller {
                     if (cell.isEmpty())
                         cell.setType(currentPlayer);
 
+                    boolean playerWon = check.checkWin(cells, currentPlayer);
+                    System.out.println(playerWon);
+
                     if (cell.getType() == Slutprojekt_prog2.cell.cellType.x) {
                         button.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
                         currentPlayer = Slutprojekt_prog2.cell.cellType.o;
