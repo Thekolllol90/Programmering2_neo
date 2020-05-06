@@ -10,7 +10,12 @@ public class cell {
 
     public cell(){}
 
+
+
     private Button button;
+
+
+
     private cellType type;
 
     public cell(Button button, cellType type){
@@ -20,6 +25,22 @@ public class cell {
 
     public boolean isEmpty(){
         return type == cellType.empty;
+    }
+
+    public Button getButton() {
+        return button;
+    }
+
+    public void setButton(Button button) {
+        this.button = button;
+    }
+
+    public cellType getType() {
+        return type;
+    }
+
+    public void setType(cellType type) {
+        this.type = type;
     }
 
 }
