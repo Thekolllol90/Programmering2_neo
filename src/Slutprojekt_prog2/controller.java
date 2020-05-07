@@ -32,7 +32,9 @@ public class controller {
                         cell.setType(currentPlayer);
 
                     boolean playerWon = check.checkWin(cells, currentPlayer);
-                    System.out.println(playerWon);
+                    if(playerWon){
+                        colorWin.color(cells, currentPlayer);
+                    }
 
                     if (cell.getType() == Slutprojekt_prog2.cell.cellType.x) {
                         button.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
