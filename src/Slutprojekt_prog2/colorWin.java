@@ -9,16 +9,21 @@ import javafx.scene.paint.Color;
 public class colorWin {
     public colorWin (){}
 
-    public static void color(cell[] cells, cell.cellType player){
+    public static void color(Cell[] Cells, Cell.cellType player){
         Color color = null;
-        if(player == Slutprojekt_prog2.cell.cellType.x){
+        if(player == Cell.cellType.x){
             color = Color.RED;
-        } else if(player == Slutprojekt_prog2.cell.cellType.o){
+        } else if(player == Cell.cellType.o){
             color = Color.BLUE;
+        } else{
+            color = Color.BLACK;
         }
 
         for(int i = 0; i < 9; i++){
-            cells[i].getButton().setBackground(new Background(new BackgroundFill(color, CornerRadii.EMPTY, Insets.EMPTY)));
+            Cells[i].getButton().setBackground(new Background(new BackgroundFill(color, CornerRadii.EMPTY, Insets.EMPTY)));
+            Cells[i].getButton().setOnAction(event -> {
+                event.consume();
+            });
         }
     }
 }

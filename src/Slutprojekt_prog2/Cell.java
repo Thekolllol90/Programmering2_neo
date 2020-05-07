@@ -3,12 +3,12 @@ package Slutprojekt_prog2;
 import javafx.scene.control.Button;
 
 
-public class cell {
+public class Cell {
     public enum cellType{
         empty,x,o
     }
 
-    public cell(){}
+    public Cell(){}
 
 
 
@@ -18,7 +18,7 @@ public class cell {
 
     private cellType type;
 
-    public cell(Button button, cellType type){
+    public Cell(Button button, cellType type){
         this.button = button;
         this.type = type;
     }

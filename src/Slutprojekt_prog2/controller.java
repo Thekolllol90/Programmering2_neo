@@ -10,14 +10,12 @@ import javafx.stage.Stage;
 public class controller {
     public controller(){}
 
-    private static cell.cellType currentPlayer = Slutprojekt_prog2.cell.cellType.x;
+    private static Cell.cellType currentPlayer = Cell.cellType.x;
 
     public static void display(Stage primaryStage){
-        buttons buttons = new buttons();
-        buttonsLayout buttonsLayout = new buttonsLayout();
+        boolean play = false;
 
-        cell[] cells = new cell[3*3];
-
+        Cell[] cells = new Cell[3*3];
 
         VBox rows = new VBox();
         for(int x = 0; x < 3; x++){
@@ -25,7 +23,7 @@ public class controller {
             for(int y = 0; y < 3; y++){
                 Button button = new Button();
 
-                cell cell = new cell(button, Slutprojekt_prog2.cell.cellType.empty);
+                Cell cell = new Cell(button, Cell.cellType.empty);
 
                 button.setOnAction(event -> {
                     if (cell.isEmpty())
@@ -36,21 +34,18 @@ public class controller {
                         colorWin.color(cells, currentPlayer);
                     }
 
-                    if (cell.getType() == Slutprojekt_prog2.cell.cellType.x) {
+                    if (cell.getType() == Cell.cellType.x) {
                         button.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
-                        currentPlayer = Slutprojekt_prog2.cell.cellType.o;
-                    } else if (cell.getType() == Slutprojekt_prog2.cell.cellType.o){
+                        currentPlayer = Cell.cellType.o;
+                    } else if (cell.getType() == Cell.cellType.o){
                         button.setBackground(new Background(new BackgroundFill(Color.BLUE, CornerRadii.EMPTY, Insets.EMPTY)));
-                    currentPlayer = Slutprojekt_prog2.cell.cellType.x;
+                    currentPlayer = Cell.cellType.x;
                 }
 
                 });
 
-
-
                 button.setMinWidth(100.0f);
                 button.setMinHeight(100.0f);
-
 
                 cells[x + y * 3] = cell;
 
@@ -60,21 +55,13 @@ public class controller {
             rows.getChildren().add(row);
         }
 
-        /*Button[] buttons1 = buttons.CreateButtons();
-        buttons.ButtonFunction(buttons1);
-        buttonsLayout.buttonStyle(buttons1);*/
-
         StackPane view = new StackPane();
         view.getChildren().add(rows);
-
-
 
         Scene scene = new Scene(view,300, 300);
         primaryStage.setTitle("Three in a row");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
-    public static void select_color(){
 
-    }
 }

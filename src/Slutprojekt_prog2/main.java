@@ -7,7 +7,6 @@ public class main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        controller controller = new controller();
-        controller.display(primaryStage);
+        startMeny.menu(primaryStage);
     }
 }
