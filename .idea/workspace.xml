@@ -7,25 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00aa9247-76a4-4234-ad5b-9334aff8accf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Slutprojekt_prog2/startMeny.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Programmering2/Slutprojekt_prog2/buttons.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Programmering2/Slutprojekt_prog2/buttonsLayout.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Programmering2/Slutprojekt_prog2/cell$cellType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programmering2/Slutprojekt_prog2/cell$cellType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Programmering2/Slutprojekt_prog2/cell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programmering2/Slutprojekt_prog2/cell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Programmering2/Slutprojekt_prog2/check.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programmering2/Slutprojekt_prog2/check.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Programmering2/Slutprojekt_prog2/colorWin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programmering2/Slutprojekt_prog2/colorWin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Programmering2/Slutprojekt_prog2/controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programmering2/Slutprojekt_prog2/controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Programmering2/Slutprojekt_prog2/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programmering2/Slutprojekt_prog2/main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Programmering2/tetris/tetris.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programmering2/tetris/tetris.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Slutprojekt_prog2/buttons.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Slutprojekt_prog2/buttonsLayout.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Slutprojekt_prog2/cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Slutprojekt_prog2/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Slutprojekt_prog2/check.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Slutprojekt_prog2/check.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Slutprojekt_prog2/colorWin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Slutprojekt_prog2/colorWin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Slutprojekt_prog2/controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Slutprojekt_prog2/controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Slutprojekt_prog2/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Slutprojekt_prog2/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tetris/tetris.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris/tetris.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Slutprojekt_prog2/requests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Slutprojekt_prog2/startMeny.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Slutprojekt_prog2/startMeny.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

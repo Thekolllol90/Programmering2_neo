@@ -25,6 +25,8 @@ public class controller {
 
                 Cell cell = new Cell(button, Cell.cellType.empty);
 
+                startMeny startMeny = new startMeny();
+
                 button.setOnAction(event -> {
                     if (cell.isEmpty())
                         cell.setType(currentPlayer);
@@ -35,10 +37,10 @@ public class controller {
                     }
 
                     if (cell.getType() == Cell.cellType.x) {
-                        button.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
+                        button.setBackground(new Background(new BackgroundFill(Slutprojekt_prog2.startMeny.getColor1(), CornerRadii.EMPTY, Insets.EMPTY)));
                         currentPlayer = Cell.cellType.o;
                     } else if (cell.getType() == Cell.cellType.o){
-                        button.setBackground(new Background(new BackgroundFill(Color.BLUE, CornerRadii.EMPTY, Insets.EMPTY)));
+                        button.setBackground(new Background(new BackgroundFill(Slutprojekt_prog2.startMeny.getColor2(), CornerRadii.EMPTY, Insets.EMPTY)));
                     currentPlayer = Cell.cellType.x;
                 }
 

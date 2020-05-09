@@ -10,11 +10,13 @@ public class colorWin {
     public colorWin (){}
 
     public static void color(Cell[] Cells, Cell.cellType player){
+        startMeny startMeny = new startMeny();
         Color color = null;
+
         if(player == Cell.cellType.x){
-            color = Color.RED;
+            color = Slutprojekt_prog2.startMeny.getColor1();
         } else if(player == Cell.cellType.o){
-            color = Color.BLUE;
+            color = Slutprojekt_prog2.startMeny.getColor2();
         } else{
             color = Color.BLACK;
         }

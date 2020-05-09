@@ -18,14 +18,22 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class startMeny {
     public startMeny(){}
 
-    private static Color color1;
-    private static Color color2;
+    private static Color color1 = Color.RED;
+    private static Color color2 = Color.BLUE;
+
+    public static Color getColor1(){
+        return color1;
+    }
+
+    public static Color getColor2(){
+        return color2;
+    }
 
     public static boolean menu(Stage primaryStage){
         AtomicBoolean game = new AtomicBoolean(false);
 
         Text t =  new Text();
-        t.setText("Press play or select colors");
+        t.setText("Press play or change colors with button on the bottom");
 
         Button play = new Button();
         play.setMinWidth(150.0f);
@@ -39,18 +47,12 @@ public class startMeny {
         VBox vBox = new VBox();
 
         Button colors1 = new Button();
-        Button colors2 = new Button();
         Rectangle sqr1 = new Rectangle();
         Rectangle sqr2 = new Rectangle();
         Rectangle sqr3 = new Rectangle();
         Rectangle sqr4 = new Rectangle();
 
         colors1.setOnAction(event -> {
-            color1 = Color.RED;
-            color2 = Color.BLUE;
-        });
-
-        colors2.setOnAction(event -> {
             color1 = Color.GREEN;
             color2 = Color.PURPLE;
         });
@@ -60,10 +62,10 @@ public class startMeny {
         sqr3.setFill(Color.GREEN);
         sqr4.setFill(Color.PURPLE);
 
-        Button[] buttons = {colors1, colors2};
+        Button[] buttons = {colors1};
         Rectangle[] squares = {sqr1, sqr2, sqr3, sqr4};
 
-        hBox1.getChildren().addAll(colors1, colors2);
+        hBox1.getChildren().addAll(colors1);
         hBox2.getChildren().addAll(sqr1, sqr2, sqr3, sqr4);
         vBox.getChildren().addAll(hBox1, hBox2);
 
