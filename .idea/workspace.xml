@@ -8,9 +8,11 @@
   <component name="ChangeListManager">
     <list default="true" id="00aa9247-76a4-4234-ad5b-9334aff8accf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Programmering2/Slutprojekt_prog2/colorWin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programmering2/Slutprojekt_prog2/colorWin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Slutprojekt_prog2/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Slutprojekt_prog2/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Slutprojekt_prog2/check.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Slutprojekt_prog2/check.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Slutprojekt_prog2/colorWin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Slutprojekt_prog2/colorWin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Slutprojekt_prog2/controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Slutprojekt_prog2/controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Slutprojekt_prog2/requests.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Slutprojekt_prog2/startMeny.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Slutprojekt_prog2/startMeny.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
